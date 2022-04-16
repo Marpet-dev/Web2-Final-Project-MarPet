@@ -1,0 +1,53 @@
+.linktrongchinhsach{
+    text-decoration: none;
+    color:#db7093;
+    font-weight: bold;
+    position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: linear-gradient(to right, #8e1c48, #8e1c48 50%, #db7093 50%);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.linktrongchinhsach:hover{
+    /* font-weight: bold; */
+    background-position: 0 100%;
+}
+.listInPolicy{
+    margin:20px 15px 20px 0px;
+}
+.marginPolicy{
+    margin-right:20px;
+}
+.scenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+.module-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+ol{
+    text-align: justify;
+    margin-left:10px;
+    margin-right:10px;
+}
+table,
+        tr,
+        td,
+        th {
+            border: 1px solid #db7093;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+#giaohang h2, #phuongthucthanhtoan h2, #doitrahang h2, #baohanh h2{
+    color:#db7093;
+}
