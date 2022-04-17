@@ -32,14 +32,14 @@ export class NewsComponent implements OnInit {
       (param) =>{
         let id = param.get ('id')
         if (id != null){
-          this.selectedId = id;
+          this.selectedId = parseInt(id);
         }
       }
     )
       }
     
       onselect(data: any):void{
-        this.router.navigate(['/subnews', data.id])
+        this.router.navigate(['/news', data.id])
       }
     isSelected(s: any):boolean{
       return s.id === this.selectedId

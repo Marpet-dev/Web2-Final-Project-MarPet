@@ -15,7 +15,7 @@ selectedId: any;
       (param) =>{
         let id = param.get ('id')
         if (id != null){
-          this.selectedId = id;
+          this.selectedId = parseInt(id);
         }
       }
     )
