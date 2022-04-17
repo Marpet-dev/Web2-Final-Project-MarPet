@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NewsService } from 'src/app/service/news.service';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  subnewsList: any[] = [];
+  homeNewsList: any;
+  selectedId: any;
+
+  constructor(private _subnew: NewsService,  private  _homeNews: NewsService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
+    this._subnew.getSubNews().subscribe(
+      {
+        next: (data) => {this. subnewsList=data
+        }
+      }
+    )
+    this._homeNews.getHomeNews().subscribe(
+      {
+        next: (data) => {this.  homeNewsList=data
+        }
+      }
+    )
+    this.activatedRoute.paramMap.subscribe(
+      (param) =>{
+        let id = param.get ('id')
+        if (id != null){
+          this.selectedId = id;
+        }
+      }
+    )
+      }
+    
+      onselect(data: any):void{
+        this.router.navigate(['/subnews', data.id])
+      }
+    isSelected(s: any):boolean{
+      return s.id === this.selectedId
+    }
 
 }
