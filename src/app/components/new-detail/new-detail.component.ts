@@ -20,6 +20,9 @@ selectedId: any;
       }
     )
       }
+      isSelected(data:any){
+        return data.id === this.selectedId;
+      }
   }
 
 
