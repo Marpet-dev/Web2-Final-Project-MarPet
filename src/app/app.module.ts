@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +15,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { PolicyComponent } from './components/policy/policy.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +28,13 @@ import { PolicyComponent } from './components/policy/policy.component';
     FooterComponent,
     SignInComponent,
     SignUpComponent,
-    PolicyComponent
+    PolicyComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

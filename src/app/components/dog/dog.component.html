@@ -1,1 +1,49 @@
-<p>dog works!</p>
+<div class="container" style="overflow: auto">
+    <div class="category">
+        <div class="category_content footer_content--left">
+            <h2>Danh mục</h2>
+            <ul class="category-list">
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_fo">Thức ăn</a>
+                </li>
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_cl">Quần áo</a>
+                </li>
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_co">Vòng cổ, dây dắt, rọ mõm</a>
+                </li>
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_ds">Dụng cụ ăn uống</a>
+                </li>
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_be">Mỹ phẩm, dụng cụ làm đẹp</a>
+                </li>
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_ca">Chuồng, giường, nhà túi</a>
+                </li>
+                <li class="category-item category-item--active">
+                    <a href="Dog-Product.html?category=d_toy">Đồ chơi, phụ kiện huấn luyện</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of products">
+            <div class="product">
+                <div class="product-item">
+                    <div class="product-top text-center">
+                        <img src="./assets/library/{{p.image[0]}}" alt="Error">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-label text-center">{{p.label}}</div><br>
+                        <div class="product-name text-center">{{p.name}}</div><br>
+                        <div class="product-price text-center">{{p.price[0]}}</div>  
+                        <div class="product-discount text-center">
+                            {{p.discount}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
