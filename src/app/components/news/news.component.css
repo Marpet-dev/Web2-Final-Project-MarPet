@@ -1,0 +1,370 @@
+.news_container {
+    margin: 0 20px 20px 20px;
+}
+
+div {
+    display: block;
+}
+
+.title {
+    color: palevioletred;
+    text-align: center;
+}
+
+.title-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.title-box h2 {
+    letter-spacing: 5px;
+    color: palevioletred;
+    margin-right: -10px;
+    font-weight: 800;
+}
+
+.title-box hr {
+    width: 200px;
+    height: 2px;
+    background-color: palevioletred;
+    border: none;
+    margin: 15px 10px;
+}
+
+.bigImg {
+    float: left;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-box {
+    display: flex;
+    margin: 0 30px 25px 30px;
+}
+
+.bigImg img {
+    width: 100%;
+}
+
+.bigImg span {
+    position: absolute;
+    z-index: 22;
+    background-color: rgb(216, 112, 147, 0.7);
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    color: wheat;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.bigImg span:hover {
+    text-decoration: underline;
+}
+
+.right-content {
+    float: right;
+    width: 40%;
+    height: 100%;
+    margin-left: 30px;
+}
+
+.news-box ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.right-content img#right {
+    width: 200px;
+    height: 144px;
+}
+
+.ul-box {
+    height: 100%;
+    margin: 0 20px;
+}
+
+.ul-box li:hover {
+    box-shadow: 0px 0px 25px 2px rgb(173, 173, 173);
+}
+
+.ul-box a {
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ul-box a span {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.ul-box a span:hover {
+    text-decoration: underline;
+    color: palevioletred;
+}
+
+.ul-box li {
+    margin-top: 15px;
+}
+
+.ul-box li:first-child {
+    margin-top: 0px;
+}
+
+.right-content a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #4c4c4c;
+}
+
+.bigImg a {
+    cursor: pointer;
+}
+
+.bottom-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-news {
+    display: flex;
+    flex-direction: row;
+}
+
+.subnews {
+    width: 100%;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subnews:hover {
+    box-shadow: 0px 0px 25px 2px rgb(173, 173, 173);
+}
+
+.subnews span {
+    margin: 20px 0;
+}
+
+.subnews span:hover {
+    text-decoration: palevioletred underline;
+    color: palevioletred;
+}
+
+.subnews img {
+    width: 100%;
+    height: 70%;
+}
+
+@media screen and (max-width: 1250px) {
+    .bigImg img {
+        width: 120%;
+        height: 500px;
+    }
+    .bigImg span {
+        width: 100%;
+        padding-right: 0px;
+    }
+    .right-content img#right {
+        width: 230px;
+        height: 158px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .bigImg img {
+        width: 600px;
+        height: 400px;
+    }
+    .bigImg span {
+        width: 550px;
+        padding-right: 0px;
+    }
+    .right-content img#right {
+        width: 180px;
+        height: 124px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .bigImg img {
+        width: 480px;
+        height: 350px;
+    }
+    .bigImg span {
+        width: 470px;
+        padding-right: 0px;
+    }
+    .right-content img#right {
+        width: 150px;
+        height: 108px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .bigImg img {
+        width: 430px;
+        height: 300px;
+    }
+    .bigImg span {
+        width: 420px;
+        padding-right: 0px;
+    }
+    .right-content img#right {
+        width: 132px;
+        height: 89px;
+    }
+    .subnews img {
+        width: 150px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .news-box {
+        display: flex;
+        flex-direction: column;
+        width: 900px;
+    }
+    .right-content {
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+    .bigImg img {
+        width: 50%;
+        height: auto
+    }
+    .bigImg span {
+        width: 48%;
+        padding-right: 0px;
+    }
+    .right-content img#right {
+        width: 300px;
+        height: 200px;
+    }
+    .li_news-title {
+        width: 140px;
+        text-align: left;
+    }
+    .ul-box {
+        height: 100%;
+        margin: 0 20px;
+        width: 460px;
+    }
+    .more-news {
+        flex-wrap: wrap;
+    }
+    .more-news a {
+        display: flex;
+        flex-direction: row;
+    }
+    .subnews {
+        margin-top: 10px;
+    }
+    .subnews span {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .news-box {
+        width: 100%;
+        margin: 0px;
+    }
+    .bigImg {
+        width: 100%;
+    }
+    .bigImg img {
+        width: 100%;
+    }
+    .bigImg span {
+        width: 100%;
+    }
+    .right-content {
+        width: 100%;
+    }
+    .ul-box {
+        width: 90%;
+        margin: 0px;
+    }
+    .ul-box a {
+        width: 100%;
+    }
+    .right-content img#right {
+        width: 70%;
+        height: auto;
+    }
+    .li_news-title {
+        width: 100%;
+    }
+    .title-box {
+        width: 100%;
+    }
+    .title-box hr {
+        display: none;
+    }
+    .more-news {
+        width: 100%;
+        flex-direction: column;
+    }
+    .subnews {
+        padding: 10px 0;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .news-box {
+        width: 100%;
+        margin: 0px;
+    }
+    .bigImg {
+        width: 100%;
+    }
+    .bigImg img {
+        width: 100%;
+    }
+    .bigImg span {
+        width: 100%;
+    }
+    .right-content {
+        width: 100%;
+    }
+    .ul-box {
+        width: 90%;
+        margin: 0px;
+    }
+    .ul-box a {
+        width: 100%;
+    }
+    .right-content img#right {
+        width: 70%;
+        height: auto;
+    }
+    .li_news-title {
+        width: 100%;
+    }
+    .title-box {
+        width: 100%;
+    }
+    .title-box hr {
+        display: none;
+    }
+    .more-news {
+        width: 100%;
+    }
+    .subnews {
+        padding: 10px 0;
+        margin: 0px;
+    }
+}
