@@ -13,36 +13,38 @@ export class NewsComponent implements OnInit {
   homeNewsList: any;
   selectedId: any;
 
-  constructor(private _subnew: NewsService,  private  _homeNews: NewsService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private _subnew: NewsService, private _homeNews: NewsService, private _router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this._subnew.getSubNews().subscribe(
       {
-        next: (data) => {this. subnewsList=data
+        next: (data) => {
+          this.subnewsList = data
         }
       }
     )
     this._homeNews.getHomeNews().subscribe(
       {
-        next: (data) => {this.  homeNewsList=data
+        next: (data) => {
+          this.homeNewsList = data
         }
       }
     )
     this.activatedRoute.paramMap.subscribe(
-      (param) =>{
-        let id = param.get ('id')
-        if (id != null){
+      (param) => {
+        let id = param.get('id')
+        if (id != null) {
           this.selectedId = parseInt(id);
         }
       }
     )
-      }
-    
-      onselect(data: any):void{
-        this.router.navigate(['/news', data.id])
-      }
-    isSelected(s: any):boolean{
-      return s.id === this.selectedId
-    }
+  }
+
+  onselect(data: any): void {
+    this._router.navigate(['/news', data.id])
+  }
+  isSelected(s: any): boolean {
+    return s.id === this.selectedId
+  }
 
 }
