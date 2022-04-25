@@ -18,15 +18,15 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     this._subnew.getSubNews().subscribe(
       {
-        next: (data) => {
-          this.subnewsList = data
+        next: (subnewsdata) => {
+          this.subnewsList = subnewsdata
         }
       }
     )
     this._homeNews.getHomeNews().subscribe(
       {
-        next: (data) => {
-          this.homeNewsList = data
+        next: (homenewsdata) => {
+          this.homeNewsList = homenewsdata
         }
       }
     )
@@ -41,10 +41,11 @@ export class NewsComponent implements OnInit {
   }
 
   onselect(data: any): void {
-    this._router.navigate(['/news', data.id])
+    this._router.navigate(['/news', data])
   }
   isSelected(s: any): boolean {
     return s.id === this.selectedId
   }
+
 
 }

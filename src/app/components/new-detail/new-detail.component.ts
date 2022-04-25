@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import news from '../../../assets/data/subnews.json'
+
 
 @Component({
   selector: 'app-new-detail',
@@ -8,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NewDetailComponent implements OnInit {
 selectedId: any;
+selectedTitle: any;
+newDetail: any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -16,6 +20,8 @@ selectedId: any;
         let id = param.get ('id')
         if (id != null){
           this.selectedId = parseInt(id);
+          let item = news.filter(item => item.id === this.selectedId)[0]
+          this.newDetail = item
         }
       }
     )

@@ -1,1 +1,68 @@
-<h4>#{{selectedId}}</h4>
+<div class="news_container">
+    <div class="news_header">
+        <div class="news_header-img">
+            <img src="{{newDetail.image}}" alt="">
+        </div>
+        <div class="news_header-text-container">
+            <div style="width: 100%; margin: 0 auto">
+                <div class="news_header-text-title">
+                    <h1>{{newDetail.title}}</h1>
+                </div>
+                <div class="news_header-text-intro">
+                    <p>
+                        <i>
+                                <br>
+                                {{newDetail.contents[0].content}}
+                                </i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news_content">
+        <div class="news_content-text-title1">
+
+            <h2>{{newDetail.subtitles[0].subtitle}}</h2>
+        </div>
+        <div class="news_content-text">
+            <p style="margin-top: 10px;">
+                <p>{{newDetail.contents[1].content}}</p>
+
+        </div>
+        <br style="height: 50px;">
+        <div class="news_content-text-detail" id="detail1">
+            <div class="news_content-text-title1">
+                <h2>{{newDetail.subtitles[1].subtitle}}</h2>
+            </div>
+
+            <div class="news_content-text-content">
+                <div class="news_content-text-content-left-img" style="width: 700px">
+                    <img src="{{newDetail.image}}" alt="">
+                </div>
+
+                <ul class="news_ul">
+                    <p>
+                        {{newDetail.contents[2].content}}
+                    </p>
+
+                </ul>
+
+            </div>
+        </div>
+        <div style="height: 50px;"></div>
+        <div class="news_content-text-detail" id="detail2">
+            <div class="news_content-text-title1">
+                <h2>{{newDetail.subtitles[2].subtitle}}</h2>
+            </div>
+
+            <div>
+                <p>{{newDetail.contents[3].content}}</p>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
