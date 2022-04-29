@@ -29,6 +29,8 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './components/about/about.component';
+import { ServiceAndSupportComponent } from './components/service-and-support/service-and-support.component';
 
 
 
@@ -44,7 +46,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignInComponent,
     SignUpComponent,
     PolicyComponent,
-RoutingComponents
+RoutingComponents,
+AboutComponent,
+ServiceAndSupportComponent
     
   ],
   imports: [

@@ -10,12 +10,18 @@ import { PetServicesComponent } from './components/pet-services/pet-services.com
 import { PolicyComponent } from './components/policy/policy.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AboutComponent } from './components/about/about.component';
+import { ServiceAndSupportComponent } from './components/service-and-support/service-and-support.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
+  },
+  {
+    path: 'about', 
+    component: AboutComponent
   },
   {
     path: 'cat', 
@@ -52,6 +58,10 @@ const routes: Routes = [
   {
     path: 'sign-up', 
     component: SignUpComponent
+  },
+  {
+    path: 'service-and-support', 
+    component: ServiceAndSupportComponent
   }
 ];
 
