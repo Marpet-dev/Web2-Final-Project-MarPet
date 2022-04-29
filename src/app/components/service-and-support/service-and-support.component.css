@@ -1,0 +1,143 @@
+.linktrongdichvuhotro{
+    text-decoration: none;
+    color:#db7093;
+    font-weight: bold;
+    position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: linear-gradient(to right, #db7093, #db7093 50%, black 50%);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.linktrongdichvuhotro:hover{
+    /* font-weight: bold; */
+    background-position: 0 100%;
+}
+.listInPolicy{
+    margin:20px 15px 20px 0px;
+}
+.marginPolicy{
+    margin-right:20px;
+}
+.scenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+.module-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+ol{
+    text-align: justify;
+    margin-left:10px;
+    margin-right:10px;
+}
+table,
+        tr,
+        td,
+        th {
+            border: 1px solid #db7093;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+#huongdandathang h2, #gioithieubanbe h2, #trungtamcskh h2, #baohanh h2{
+    color:#db7093;
+}
+.container {
+    margin: auto;
+    max-width: 1300px;
+    margin-bottom: 30px;
+    min-width: 300px;
+    padding: 0px 15px;
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+.step {
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.title {
+    margin-top: 2.25rem;
+    margin-bottom: .75rem;
+    font-size: 22px;
+    word-spacing: 2px;
+    font-weight: bold;
+}
+
+.notice {
+    color: palevioletred;
+    font-weight: 600;
+}
+
+.welcome {
+    color: palevioletred;
+    font-weight: bold;
+    text-align: justify;
+    width: fit-content;
+    font-size: 20px;
+}
+
+.storeinformation {
+    margin-top: 20px;
+}
+
+#highlight {
+    color: red;
+}
+
+p {
+    margin: 10px 0;
+}
+
+#link {
+    color: palevioletred;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.step a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.step a:hover {
+    color: red!important;
+}
+
+@media only screen and (max-width: 1328px) {
+    .container {
+        width: 1170px;
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 1172px) {
+    .container {
+        width: 90%;
+        padding: 0px 15px;
+    }
+}
+.step ol li {
+    list-style-type: decimal;
+    color:black;
+}
+
+.step ol {
+    margin-left: 30px;
+}
+
+.welcome {
+    margin-bottom: 12px;
+}

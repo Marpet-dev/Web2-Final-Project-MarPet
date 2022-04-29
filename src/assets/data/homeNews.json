@@ -1,7 +1,7 @@
 [{
         "newid": "1",
         "title": "Chữa bệnh viêm da cho chó mèo tại nhà",
-        "image": "http://127.0.0.1:5504/library/chuaviemdatainha.jpg",
+        "image": "../../../assets/library/chuaviemdatainha.jpg",
         "subtitles": [{
             "subtitle": "Nguyên nhân gây ra viêm da ở chó mèo"
         }, {
@@ -23,7 +23,7 @@
     {
         "newid": "1",
         "title": "Cún mang bầu nên có chế độ dinh dưỡng như thế nào?",
-        "image": "http://127.0.0.1:5504/library/cunmangbau.jpg",
+        "image": "../../../assets/library/cunmangbau.jpg",
         "subtitles": [{
             "subtitle": "Nguyên nhân gây ra viêm da ở chó mèo"
         }, {
@@ -45,7 +45,7 @@
     {
         "newid": "1",
         "title": "Cún mang bầu nên có chế độ dinh dưỡng như thế nào?",
-        "image": "http://127.0.0.1:5504/library/tameoantoan.jpg",
+        "image": "../../../assets/library/tameoantoan.jpg",
         "subtitles": [{
             "subtitle": "Nguyên nhân gây ra viêm da ở chó mèo"
         }, {

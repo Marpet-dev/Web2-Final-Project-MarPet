@@ -1,7 +1,7 @@
 [{
         "id": 1,
         "title": "Phải làm sao khi chó bị đau chân và đi khập khiễng?",
-        "image": "http://127.0.0.1:5504/library/news-img/cho-bi-dau-chan.jpg",
+        "image": "../../../assets/library/news-img/cho-bi-dau-chan.jpg",
         "subtitles": [{
             "subtitle": "Nguyên nhân khiến chó bị đau chân"
         }, {
@@ -23,7 +23,7 @@
     {
         "id": 2,
         "title": "Cách chữa trị khi chó bị trật khớp xương bánh chè",
-        "image": "http://127.0.0.1:5504/library/news-img/cho-bi-dau-chan-2.jpg",
+        "image": "../../../assets/library/news-img/cho-bi-dau-chan-2.jpg",
 
         "subtitles": [{
                 "subtitle": "Nguyên nhân khiến chó bị trật khớp xương bánh chè"
@@ -50,7 +50,7 @@
     {
         "id": 3,
         "title": "Tại sao mèo bị cúm? Các biểu hiện và cách chữa trị thế nào?",
-        "image": "http://127.0.0.1:5504/library/news-img/meo-bi-cum.jpg",
+        "image": "../../../assets/library/news-img/meo-bi-cum.jpg",
         "subtitles": [{
             "subtitle": "Nguyên nhân mèo bị cảm lạnh"
         }, {
@@ -74,7 +74,7 @@
     {
         "id": 4,
         "title": "3 lý do tại sao mèo thích hất đồ vật xuống đất",
-        "image": "http://127.0.0.1:5504/library/news-img/khong-cat-rau-meo.jpg",
+        "image": "../../../assets/library/news-img/khong-cat-rau-meo.jpg",
         "subtitles": [{
             "subtitle": "1. Mèo thường hất đổ đồ đạc để xem chúng thực sự “ngỏm” hay chưa"
         }, {
