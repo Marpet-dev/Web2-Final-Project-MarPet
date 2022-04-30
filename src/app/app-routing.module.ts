@@ -11,6 +11,8 @@ import { PolicyComponent } from './components/policy/policy.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutComponent } from './components/about/about.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { ServiceAndSupportComponent } from './components/service-and-support/service-and-support.component';
 
 const routes: Routes = [
@@ -63,6 +65,15 @@ const routes: Routes = [
     path: 'service-and-support', 
     component: ServiceAndSupportComponent
   }
+  // ,
+  // {
+  //   path: 'header', 
+  //   component: HeaderComponent
+  // },
+  // {
+  //   path: 'footer', 
+  //   component: FooterComponent
+  // }
 ];
 
 @NgModule({
