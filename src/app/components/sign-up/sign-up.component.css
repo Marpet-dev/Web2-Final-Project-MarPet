@@ -16,7 +16,7 @@ body {
 
 .signup_form {
     padding: 20px 100px;
-    width: 50%;
+    /* width: 50%; */
     z-index: 2;
     background-color: white;
     border-radius: 20px;
@@ -175,21 +175,21 @@ body {
 
 @media screen and (max-width:780px) {
     .signup_form {
-        width: 300px;
+        /* width: 300px; */
         padding: 50px;
     }
 }
 
 @media screen and (max-width:650px) {
     .signup_form {
-        width: 250px;
+        /* width: 250px; */
         padding: 40px;
     }
 }
 
 @media screen and (max-width:500px) {
     .signup_form {
-        width: 200px;
+        /* width: 200px; */
         padding: 20px;
     }
     .signup_form-row {
@@ -199,7 +199,7 @@ body {
 
 @media screen and (max-width:414px) {
     .signup_form {
-        width: 80%;
+        /* width: 80%; */
         padding: 20px;
     }
     .signup_form-row {
