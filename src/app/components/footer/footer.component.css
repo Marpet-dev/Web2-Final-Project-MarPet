@@ -13,10 +13,14 @@
   transition: background-position 275ms ease;
 }
 .riengbiet:hover{
-    /* font-weight: bold; */
-    background-position: 0 100%;
+  /* font-weight: bold; */
+  background-position: 0 100%;
+}
+.riengbiet2:hover{
+  color: #4f4f51;
 }
 a{
     text-decoration: none;
-    color: black;
+    /* color: black; */
+    color: #4f4f51;
 }
