@@ -17,6 +17,7 @@ import { Discount50Component } from './components/discount50/discount50.componen
 import { EmailresetComponent } from './components/emailreset/emailreset.component';
 import { ServiceAndSupportComponent } from './components/service-and-support/service-and-support.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'dog', 
     component: DogComponent
+  },
+  {
+    path: 'favorite', 
+    component: FavoriteComponent
   },
   {
     path: 'home', 
