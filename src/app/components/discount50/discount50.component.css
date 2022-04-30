@@ -1,0 +1,87 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: SVN-Poppins;
+    background-color: #f2f3f5;
+    line-height: 25px;
+}
+
+.news {
+    margin: 20px;
+padding: 30px;
+    text-align: center;
+    background-color: white;
+}
+
+.news-content {
+    display: block;
+    text-align: justify;
+    padding: 0 30px;
+
+}
+
+#icon {
+    width: 18px;
+    height: 18px;
+}
+
+ .news h2 {
+    color: palevioletred;
+    margin-bottom: 20px;
+}
+
+
+#highlight {
+    color: red;
+    font-weight: 700;
+}
+
+p#illustrate {
+    text-align: center;
+}
+
+.news li {
+    list-style-type: inherit;
+    margin:0 20px;
+  
+}
+
+a {
+    cursor: pointer;
+}
+.news span{
+    font-weight: 600;
+    
+}
+        @media screen and (max-width: 768px) {
+            .news-img img {
+                width: 500px;
+            }
+        }
+        
+        @media screen and (max-width: 500px) {
+            .news-img img {
+                width: 300px;
+            }
+            .dathang_img{
+                width: 150px;
+                height: 50px;
+            }
+            .news-content{
+                padding: 0px;
+            }
+        }
+        @media screen and (max-width: 385px) {
+            .news-img img {
+                width: 250px;
+            }
+            .dathang_img{
+                width: 130px;
+                height: 30px;
+            }
+            .news-content{
+                padding: 0px;
+                font-size: 13px;
+            }
+        }
