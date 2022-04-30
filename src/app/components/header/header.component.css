@@ -1,8 +1,25 @@
-.nav-item{
-    margin-left:80px;
-    margin-right:80px;
-}
+/* .nav-item{
+    
+} */
 .dangxuat {
     pointer-events: none;
     color:rgb(175, 175, 175);
+}
+.nav-link{
+    text-decoration: none;
+    color:#db7093;
+    font-weight: bold;
+    /* position: relative; */
+  display: inline-block;
+  overflow: hidden;
+  background: linear-gradient(to right, #db7093, #db7093 50%, black 50%);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.nav-link:hover{
+    background-position: 0 100%;
 }
