@@ -3,8 +3,9 @@
 } */
 #btn-back-to-top {
   position: fixed;
-  bottom: 20px;
+  bottom: 120px;
   right: 20px;
+  z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
   /* display: none; */
 }
 .dangxuat {

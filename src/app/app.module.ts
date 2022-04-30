@@ -31,6 +31,9 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './components/about/about.component';
 import { ServiceAndSupportComponent } from './components/service-and-support/service-and-support.component';
+import { EmailresetComponent } from './components/emailreset/emailreset.component';
+import { Discount50Component } from './components/discount50/discount50.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 
@@ -48,7 +51,10 @@ import { ServiceAndSupportComponent } from './components/service-and-support/ser
     PolicyComponent,
 RoutingComponents,
 AboutComponent,
-ServiceAndSupportComponent
+ServiceAndSupportComponent,
+EmailresetComponent,
+Discount50Component,
+ShoppingCartComponent
     
   ],
   imports: [
