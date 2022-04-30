@@ -21,7 +21,7 @@ body {
     background-color: white;
     border-radius: 20px;
     max-width: 600px;
-    max-height: 600px;
+    max-height: 900px;
     box-shadow: 0px 0px 25px 2px rgb(173, 173, 173, 0.5);
 }
 
@@ -222,4 +222,21 @@ body {
     .signup_img-left {
         visibility: hidden;
     }
+}
+.anVaoDeDangNhap{
+    text-decoration: none;
+    color:#db7093;
+    font-weight: bold;
+    position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #db7093, #db7093 50%, black 50%);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.anVaoDeDangNhap:hover{
+    background-position: 0 100%;
 }
