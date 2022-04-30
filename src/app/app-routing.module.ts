@@ -16,6 +16,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { Discount50Component } from './components/discount50/discount50.component';
 import { EmailresetComponent } from './components/emailreset/emailreset.component';
 import { ServiceAndSupportComponent } from './components/service-and-support/service-and-support.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   {
@@ -78,16 +79,17 @@ const routes: Routes = [
   {
     path: 'discount50', 
     component: Discount50Component
-  }
-  // ,
-  // {
-  //   path: 'header', 
-  //   component: HeaderComponent
-  // },
-  // {
-  //   path: 'footer', 
-  //   component: FooterComponent
-  // }
+  },
+  // Điền tiếp ở dưới dòng này nha
+  
+
+
+
+
+
+
+  { path: '**', pathMatch: 'full', 
+        component: PagenotfoundComponent }
 ];
 
 @NgModule({

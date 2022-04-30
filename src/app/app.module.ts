@@ -34,6 +34,7 @@ import { ServiceAndSupportComponent } from './components/service-and-support/ser
 import { EmailresetComponent } from './components/emailreset/emailreset.component';
 import { Discount50Component } from './components/discount50/discount50.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 
@@ -54,7 +55,8 @@ AboutComponent,
 ServiceAndSupportComponent,
 EmailresetComponent,
 Discount50Component,
-ShoppingCartComponent
+ShoppingCartComponent,
+PagenotfoundComponent
     
   ],
   imports: [
