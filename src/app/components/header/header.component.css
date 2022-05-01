@@ -30,10 +30,21 @@
 .nav-link:hover{
     background-position: 0 100%;
 }
-.khongDoi{
+
+/* all for fixed header */
+/* .khongDoi{
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
   z-index:9999999999;
 }
+.d-flex{
+  padding-bottom:5.5px;
+  padding-top:5.5px;
+}
+.dropdown-menu{
+  z-index:999999999999999;
+} */
+/* all for fixed header */
+
