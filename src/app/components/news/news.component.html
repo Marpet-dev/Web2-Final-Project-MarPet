@@ -34,8 +34,8 @@
             <hr>
         </div>
         <div class="more-news">
-            <div class="subnews item {{isSelected(s) ? 'selected': ''}}" *ngFor="let s of subnewsList" (click)="onselect(s.id)">
-                <a href="">
+            <div class="subnews item {{isSelected(s) ? 'selected': ''}}" *ngFor="let s of subnewsList">
+                <a href="/news/{{s.id}}">
                     <img src="{{s.image}}" alt="">
                     <span>{{s.title}}</span>
                 </a>
