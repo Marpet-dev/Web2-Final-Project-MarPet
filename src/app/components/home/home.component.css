@@ -41,8 +41,16 @@
     left: 0px;
     top: 0px;
 }
+.sale-price {
+    text-decoration: line-through;
+}
 .backgroundDangSau{
     background:linear-gradient(white 39%, #C0466E 20%);
+    /* padding-bottom:10px; */
+    /* background:linear-gradient(to bottom, #C0466E 60%, #fff 0); */
+}
+.backgroundDangSau2{
+    background:linear-gradient(#C0466E 39%,white 20% );
     /* padding-bottom:10px; */
     /* background:linear-gradient(to bottom, #C0466E 60%, #fff 0); */
 }
@@ -82,6 +90,11 @@
     background-color: white;
     color: #AA272F;
 }
+/* .positionButton{
+    position:relative;
+    left:85%;
+    bottom:100px;
+} */
 @media only screen and (max-width: 1300px){
     .text{
         visibility: hidden;
