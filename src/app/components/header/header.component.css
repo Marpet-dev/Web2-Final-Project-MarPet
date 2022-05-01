@@ -30,3 +30,10 @@
 .nav-link:hover{
     background-position: 0 100%;
 }
+.khongDoi{
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:9999999999;
+}
