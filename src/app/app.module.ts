@@ -36,7 +36,11 @@ import { Discount50Component } from './components/discount50/discount50.componen
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+// import {MaterialExampleModule} from '../material.module';
+// import {FormFieldAppearanceExample} from './form-field-appearance-example';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -70,12 +74,16 @@ FavoriteComponent
     MdbCheckboxModule,
     MdbCollapseModule,
     MdbDropdownModule,
+    MatFormFieldModule,
     MdbFormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MdbModalModule,
     MdbPopoverModule,
     MdbRadioModule,
     MdbRangeModule,
     MdbRippleModule,
+    MatNativeDateModule,
     MdbScrollspyModule,
     MdbTabsModule,
     MdbTooltipModule,
@@ -83,6 +91,7 @@ FavoriteComponent
     BrowserAnimationsModule
   ],
   providers: [],
+  // providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

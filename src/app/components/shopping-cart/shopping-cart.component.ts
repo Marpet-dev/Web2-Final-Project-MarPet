@@ -1,6 +1,6 @@
 import { SendavatarService } from 'src/app/service/sendavatar.service';
 import { Component, OnInit, Input } from '@angular/core';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',

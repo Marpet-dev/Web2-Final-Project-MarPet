@@ -1,4 +1,8 @@
-<app-header></app-header>
-<!-- <div style="margin-top:95px;"></div> -->
-<router-outlet></router-outlet>
+<div [ngStyle]="{'position': 'fixed','width':'100%', 'top':'0', 'z-index':'100'}">
+    <app-header></app-header>
+
+</div>
+<div  [ngStyle]="{'margin-top' :'95px'}">
+    <router-outlet></router-outlet>
+</div>
 <app-footer></app-footer>

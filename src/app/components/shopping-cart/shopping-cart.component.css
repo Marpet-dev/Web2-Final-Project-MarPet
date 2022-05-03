@@ -77,3 +77,10 @@
         display: none;
    }
     
+.form-control{
+    border:1px solid white;
+    border-radius:5px;
+}
+/* .form-label{
+    z-index:99999;
+} */
