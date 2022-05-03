@@ -1,4 +1,4 @@
-<div class="container" style="overflow: auto">
+<div class="container">
     <div class="category">
         <div class="category_content footer_content--left">
             <h2>Danh mục</h2>
@@ -27,10 +27,13 @@
             </ul>
         </div>
     </div>
-
+    <!-- [style.display]="checkDog(p.category)"  -->
+    <!-- *ngIf="(p.category.substring(0, 1) == 'd')" -->
+    <!-- [style.visibility]="checkDog2(p.category)" -->
+        <!-- <div style="display: none !important;" class="products d-flex justify-content-center col-xl-4 col-md-6">s</div> -->
     <div class="row">
-        <div class="products d-flex justify-content-center col-xl-4 col-md-6"  *ngFor="let p of products">
-            <div class="product w-100" [style.visibility]="checkDog(p.category)">
+        <div class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of products">
+            <div class="product w-100" *ngIf="(p.category.substring(0, 1) == 'd')">
                 <div class="productitem">
                     <div class="product-top text-center">
                         <img src="../../../assets/{{p.image[0]}}" alt="Error">
@@ -48,3 +51,4 @@
            
         </div>
     </div>
+</div>

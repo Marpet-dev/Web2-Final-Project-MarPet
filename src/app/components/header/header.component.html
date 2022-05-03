@@ -115,11 +115,16 @@
             data-mdb-toggle="dropdown"
             aria-expanded="false"
           >
+          <p id="avatarString" style="display: none;">{{avatarRandom.message}}</p>
+          <!-- <input id="avatarString" style="display: none;" value="{{avatarRandom.message}}"> -->
+          <!-- https://cdn-icons-png.flaticon.com/512/141/141783.png -->
             <img
-              src="https://cdn-icons-png.flaticon.com/512/141/141783.png"
+              src="{{avatarRandom.message}}"
               class="rounded-circle"
               height="25"
-              alt="Black and White Portrait of a Man"
+              width="25"
+              alt=""
+              id="avatarCustomer"
               loading="lazy"
             />
           </a>

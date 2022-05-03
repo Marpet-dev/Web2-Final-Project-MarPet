@@ -50,12 +50,21 @@ export class DogComponent implements OnInit {
   checkDog(c: string) {
     this.p = c.substring(0, 1) == "d" ? true : false;
     if(this.p==true){
-      return   "visibility";
+      return "";
     }
     else{
-      return "hidden";
+      return "none !important";
     }
   }
+  // checkDog2(c: string) {
+  //   this.p = c.substring(0, 1) == "d" ? true : false;
+  //   if(this.p==true){
+  //     return "";
+  //   }
+  //   else{
+  //     return "hidden !important";
+  //   }
+  // }
   navigateType(type: string):void {
     this._router.navigate(['/dog', type])
   }

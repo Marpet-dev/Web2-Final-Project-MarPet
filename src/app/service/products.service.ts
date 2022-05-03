@@ -6,7 +6,7 @@ import { Product } from '../interface/Product';
   providedIn: 'root'
 })
 export class ProductsService {
-  url = '../assets/data/products.json';
+  url = '../../assets/data/products.json';
   constructor(private _http: HttpClient) { }
   getProducts(): Observable<Product[]> {
     return this._http.get<Product[]>(this.url)

@@ -39,17 +39,23 @@
   
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                   <!-- Quantity -->
-                  <div class="d-flex mb-4" style="max-width: 300px">
+                      <!-- <p style="text-align: center !important;">Số lượng</p> -->
+                      <!-- <p>Số lượng</p> -->
+                      
+                      <div class="d-flex mb-4" style="max-width: 300px">
                     <button class="btn btn-primary px-3 me-2"
                       onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                       <i class="fas fa-minus"></i>
                     </button>
   
-                    <div class="form-outline">
-                      <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                    <!-- <div class="form-outline">
+                      <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
                       <label class="form-label" for="form1">Quantity</label>
-                    </div>
-  
+                    </div> -->
+                    <label class="input">
+                      <input style="text-align: center !important;" class="input__field" id="form1" min="0" name="quantity" value="1" type="number" />
+                      <span class="input__label">Số lượng</span>
+                    </label>
                     <button class="btn btn-primary px-3 ms-2"
                       onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                       <i class="fas fa-plus"></i>
@@ -107,11 +113,14 @@
                       <i class="fas fa-minus"></i>
                     </button>
   
-                    <div class="form-outline">
-                      <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                    <!-- <div class="form-outline">
+                      <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
                       <label class="form-label" for="form1">Quantity</label>
-                    </div>
-  
+                    </div> -->
+                    <label class="input">
+                      <input style="text-align: center !important;" class="input__field" id="form1" min="0" name="quantity" value="1" type="number" />
+                      <span class="input__label">Số lượng</span>
+                    </label>
                     <button class="btn btn-primary px-3 ms-2"
                       onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                       <i class="fas fa-plus"></i>
@@ -142,11 +151,11 @@
                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                 alt="Visa" />
               <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                alt="American Express" />
-              <img class="me-2" width="45px"
                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
                 alt="Mastercard" />
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                alt="American Express" />
               <!-- <img class="me-2" width="45px"
                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
                 alt="PayPal acceptance mark" /> -->
@@ -160,18 +169,18 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mb-4">
                     <h5 class="mb-0">Card details</h5>
-                    <img src="https://cdn-icons-png.flaticon.com/512/141/141783.png"
-                      class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                    <img id="avatarCustomerFromHeader" src="{{message}}"
+                      class="img-fluid rounded-3" style="width: 45px; height:45px;" alt="">
                   </div>
-
+                  <!-- <p>{{message}}</p> -->
                   <p class="small mb-2">Card type</p>
-                  <a href="#!" type="submit" class="text-white"><i
-                      class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                  <a href="#!" type="submit" class="text-white"><i
+                  <a type="submit" class="text-white"><i
                       class="fab fa-cc-visa fa-2x me-2"></i></a>
-                  <a href="#!" type="submit" class="text-white"><i
+                  <a type="submit" class="text-white"><i
+                      class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                  <a type="submit" class="text-white"><i
                       class="fab fa-cc-amex fa-2x me-2"></i></a>
-                  <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                  <!-- <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a> -->
 
                   <form class="mt-4">
                     <div class="form-outline form-white mb-4">
@@ -300,3 +309,5 @@ class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModal
     </div>
   </div>
 </div>
+    
+  

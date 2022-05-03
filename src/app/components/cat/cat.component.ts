@@ -52,10 +52,10 @@ export class CatComponent implements OnInit {
   checkCat(c: string) {
     this.p = c.substring(0, 1) == "c" ? true : false;
     if(this.p==true){
-      return   "visibility";
+      return "";
     }
     else{
-      return "hidden";
+      return "none";
     }
   }
   navigateType(type: string):void {

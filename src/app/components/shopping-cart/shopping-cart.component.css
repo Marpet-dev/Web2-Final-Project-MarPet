@@ -8,3 +8,72 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
     }
+
+    
+    
+    .card1 {
+        /* background: var(--color-background);
+        padding: calc(4 * var(--size-bezel));
+        margin-top: calc(4 * var(--size-bezel)); */
+        /* border-radius: 1px; */
+        /* border: 51px solid black; */
+        /* box-shadow: 0.5rem 0.5rem 0 black; */
+   }
+    .card1--inverted {
+        
+        color: yellow;
+        
+   }
+   
+   
+   
+    .input {
+        position: relative;
+   }
+    .input__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5); */
+        /* margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5); */
+        margin-left:30%;
+        margin-top:5px;
+        /* text-align: center; */
+        background: white;
+        white-space: nowrap;
+        transform: translate(0, 0);
+        transform-origin: 0 0;
+        /* background-color: black; */
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
+   }
+    .input__field {
+        /* box-sizing: border-box; */
+        display: block;
+        width: 100%;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 5px;
+        color: black;
+        background: transparent;
+        /* border-radius: 45px; */
+   }
+    .input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+        transform: translate(0.25rem, -65%) scale(0.8);
+        /* color: red; */
+   }
+    .button-group {
+        margin-top: calc(var(--size-bezel) * 2.5);
+   }
+    
+    .icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+   }
+    .hidden {
+        display: none;
+   }
+    

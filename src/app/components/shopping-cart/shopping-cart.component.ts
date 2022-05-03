@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SendavatarService } from 'src/app/service/sendavatar.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
+  // public imgSrc:any;
+  // constructor() { }
+  message:any;
+  constructor(private stageColorService: SendavatarService) { }
 
-  constructor() { }
+  ngOnInit() {
 
-  ngOnInit(): void {
-  }
+    // this.stageColorService.stage$
+    // .subscribe(
+    //   image => {
+    //     // console.log('image subscription'+ image);
+    //       this.imgSrc = document.getElementById("avatarString")
+    //     });
+    this.message=this.stageColorService.getMessage()
+}
 
 }
