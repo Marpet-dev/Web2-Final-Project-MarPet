@@ -42,3 +42,14 @@ transition: background-position 275ms ease;
 /* font-weight: bold; */
 background-position: 0 100%;
 }
+@media only screen and (max-width: 900px){
+  .footerCSS1{
+    display:none;
+  }
+  .footerCSS2{
+    display:block !important;
+  }
+}
+.accordion-body{
+  text-align:center;
+}
