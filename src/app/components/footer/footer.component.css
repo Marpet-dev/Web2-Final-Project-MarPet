@@ -42,7 +42,7 @@ transition: background-position 275ms ease;
 /* font-weight: bold; */
 background-position: 0 100%;
 }
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 1000px){
   .footerCSS1{
     display:none;
   }
