@@ -36,9 +36,9 @@
         top: 0;
         /* padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5); */
         /* margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5); */
-        margin-left:30%;
+        /* margin-left:42.5px; */
         margin-top:5px;
-        /* text-align: center; */
+        /* text-align: center; --cũng vậy */
         background: white;
         white-space: nowrap;
         transform: translate(0, 0);
@@ -123,4 +123,11 @@
 }
 ::placeholder{
     color:whitesmoke;
+}
+
+@media only screen and (max-width: 990px){
+    .phanThanhToan{
+        width:100%; 
+        margin-top:50px;
+    }
 }

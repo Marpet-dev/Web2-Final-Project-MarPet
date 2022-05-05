@@ -14,19 +14,20 @@ export class HeaderComponent implements OnInit {
   constructor(private scroll: ViewportScroller, private _service: AvatarService, private stageColorService: SendavatarService) { }
   // message:any;
   // message=document.getElementById("avatarString")?.innerText;
-  ngOnInit(): void {
+  ngOnInit(){
     this._service.getSampleData().subscribe({
       next: data=>{
         // console.log(data);
         this.avatarRandom=data;
         console.log(document.getElementById("avatarString")?.id);
         console.log("Try first:"+this.avatarRandom.message);
-        this.stageColorService.setMessage(this.message)
+        // this.stageColorService.setMessage(this.message) --ko dc, phải ở ngoài
 
       }
     })
-    this.stageColorService.setMessage(this.message)
-    // console.log("sdad"+this.avatarRandom.message)
+    this.stageColorService.setMessage(this.message);
+    // this.stageColorService.setMessage(this.avatarRandom.message);
+    // console.log("sdad"+this.avatarRandom.message);
     // const canv =document.getElementById('avatarCustomer') as HTMLCanvasElement;
     // this.stageColorService.sendStage(canv.toDataURL()); // use service to send image to color component
   }
