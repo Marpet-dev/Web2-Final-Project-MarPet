@@ -69,11 +69,23 @@
     justify-content: center;
     font-weight: 600;
 }
+.searchBarCSS{
+  margin-right:10px;
+}
+@media only screen and (max-width: 991.5px){
+  
+  .searchBarCSS{
+    margin-right:0px;
+  }
+}
 @media only screen and (max-width: 447px){
   .headerItemResponsive{
     display:block;
   }
   .headerItemResponsive2{
-    display:none;
+    /* display:none; */
+  }
+  .searchBarCSS{
+    margin-right:0px;
   }
 }
