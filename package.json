@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "pwabuild": "ng build --output-hashing=none",
-    "pwaprod":"npm run pwabuild && cd dist/pwa-app && http-server -o"
+    "pwaprod": "npm run pwabuild && cd dist/pwa-app && http-server -o"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +30,7 @@
     "jquery": "^3.6.0",
     "mdb-angular-ui-kit": "^2.1.0",
     "mdb-ui-kit": "^4.0.0",
+    "multer": "^1.4.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
