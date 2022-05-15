@@ -33,7 +33,7 @@
             <h2 class="title">TIN LIÊN QUAN</h2>
             <hr>
         </div>
-        <div class="more-news">
+        <!-- <div class="more-news">
             <div class="subnews item {{isSelected(s) ? 'selected': ''}}" *ngFor="let s of subnewsList">
                 <a href="/news/{{s.id}}">
                     <img src="{{s.image}}" alt="">
@@ -41,6 +41,29 @@
                 </a>
             </div>
 
-        </div>
+        </div> -->
     </div>
 </div>
+<ngx-slick-carousel class="carousel" 
+  #slickModal="slick-carousel" 
+  [config]="slideConfig" 
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)">
+<!-- <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<img src="{{ slide.img }}" alt="" width="100%">
+<p>sad</p>
+</div> -->
+<div ngxSlickItem class="subnews item {{isSelected(s) ? 'selected': ''}}" *ngFor="let s of subnewsList.slice().reverse()">
+    <a href="/news/{{s.id}}">
+        <img src="{{s.image}}" alt="">
+        <p style="text-align: center">{{s.title}}</p>
+    </a>
+    <button class="btn_in_homepage" type="button"><a href="/news/{{s.id}}">Xem thêm</a></button>
+</div>
+</ngx-slick-carousel>
+<!-- <button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->

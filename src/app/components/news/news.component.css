@@ -143,9 +143,12 @@ div {
 
 .subnews {
     width: 100%;
-    margin: 0 30px;
+    margin: 30px 30px;
     display: flex;
     flex-direction: column;
+    height:420px;
+    /* position:relative !important; */
+    justify-content: space-between;
 }
 
 .subnews:hover {
@@ -153,17 +156,47 @@ div {
 }
 
 .subnews span {
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    width:100%;
+    text-align: center;
 }
-
+/* .vitriDuoiCung{
+    position:absolute !important;
+    bottom:0;
+} */
 .subnews span:hover {
     text-decoration: palevioletred underline;
     color: palevioletred;
 }
+.btn_in_homepage {
+    /* background-color: wheat; */
+    /* background-color: white; */
+    background-color: whitesmoke;
+    font-size: 18px;
+    /* padding: 5px 20px; */
+    /* margin-top: 20px; */
+    /* border-radius: 18px; */
+    font-weight: bold;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
 
+.btn_in_homepage:hover {
+    cursor: pointer;
+    /* background-color: white; */
+    /* background-color: wheat; */
+    background-color: pink;
+    /* color: #AA272F !important; */
+}
 .subnews img {
     width: 100%;
-    height: 70%;
+    /* height: 70%; */
+    /* width:300px; */
+    height:300px;
+    /* height:100%; */
+    margin:auto;
+    display:block;
 }
 
 @media screen and (max-width: 1250px) {
@@ -272,7 +305,7 @@ div {
         margin-top: 10px;
     }
     .subnews span {
-        margin-left: 10px;
+        /* margin-left: 10px; */
     }
 }
 

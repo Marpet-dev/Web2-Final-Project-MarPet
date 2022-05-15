@@ -42,7 +42,10 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/mater
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,9 +74,11 @@ FavoriteComponent
     HttpClientModule,
     MdbAccordionModule,
     SidebarModule,
+    SlickCarouselModule,
     MdbCarouselModule,
     MdbCheckboxModule,
     MdbCollapseModule,
+    CarouselModule,
     MdbDropdownModule,
     MatFormFieldModule,
     MdbFormsModule,
@@ -90,7 +95,13 @@ FavoriteComponent
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   // providers: [],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
