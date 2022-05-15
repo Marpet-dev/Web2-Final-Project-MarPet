@@ -155,7 +155,7 @@ div {
     box-shadow: 0px 0px 25px 2px rgb(173, 173, 173);
 }
 
-.subnews span {
+.subnews p {
     /* margin: 20px 0; */
     width:100%;
     text-align: center;
@@ -164,7 +164,7 @@ div {
     position:absolute !important;
     bottom:0;
 } */
-.subnews span:hover {
+.subnews p:hover {
     text-decoration: palevioletred underline;
     color: palevioletred;
 }
@@ -258,7 +258,7 @@ div {
         height: 89px;
     }
     .subnews img {
-        width: 150px;
+        width: 100%;
         font-size: 12px;
     }
 }
@@ -304,7 +304,7 @@ div {
     .subnews {
         margin-top: 10px;
     }
-    .subnews span {
+    .subnews p {
         /* margin-left: 10px; */
     }
 }
