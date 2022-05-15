@@ -15,6 +15,7 @@ export class PolicyComponent implements OnInit {
     { img: 'https://cdn-icons-png.flaticon.com/128/5968/5968311.png' },
     { img: 'https://cdn-icons-png.flaticon.com/128/196/196556.png' },
     { img: 'https://cdn-icons-png.flaticon.com/128/6001/6001399.png' },
+    { img: 'https://cdn-icons-png.flaticon.com/512/196/196577.png' },
     
   ];
   slideConfig = { 

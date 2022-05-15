@@ -45,8 +45,8 @@ export class NewsComponent implements OnInit {
         },
       },
     ],
-    // arrows:true,
-    // vertical:true
+    arrows:true, // 2 cái nút previous và next!
+    // vertical:true,
    };
   addSlide() {
     this.slides.push({ img: 'http://placehold.it/350x150/777777' });
