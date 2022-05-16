@@ -17,7 +17,7 @@ export class NewsComponent implements OnInit {
   slideConfig = { 
     slidesToShow: 3,
     slidesToScroll: 1,
-    dots: true,
+    // dots: true,
     // autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          // dots: true,
         },
       },
       {
@@ -47,6 +47,42 @@ export class NewsComponent implements OnInit {
     ],
     arrows:true, // 2 cái nút previous và next!
     // vertical:true,
+   };
+   slideConfig2 = { 
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    // // dots: true,
+    // autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          // // dots: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          // dots: true,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          // dots: true,
+        },
+      },
+    ],
+    arrows:true, // 2 cái nút previous và next!
+    vertical:true,
    };
   addSlide() {
     this.slides.push({ img: 'http://placehold.it/350x150/777777' });

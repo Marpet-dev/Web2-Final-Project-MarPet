@@ -9,20 +9,35 @@
             <div class="bigImg">
                 <a href="/discount50">
                     <img src="../../../assets/library/discount50.png" width="800px" alt="">
-                    <span>MÙA ĐÔNG KHÔNG LẠNH - GIẢM GIÁ 50% QUẦN ÁO THÚ CƯNG
+                    <span style="text-align:center">MÙA ĐÔNG KHÔNG LẠNH - GIẢM GIÁ 50% QUẦN ÁO THÚ CƯNG
                     <div class="txt"></div>
                 </span>
                 </a>
             </div>
             <div class="right-content">
-                <ul class="ul-box">
+                <!-- <ul class="ul-box">
                     <li *ngFor="let h of homeNewsList.slice().reverse()">
                         <a href="">
                             <img id="right" src="{{h.image}}" alt="">
                             <span class="li_news-title">{{h.title}}</span>
                         </a>
                     </li>
-                </ul>
+                </ul> -->
+                
+                <ngx-slick-carousel class="ul-box carousel" 
+                #slickModal="slick-carousel" 
+                [config]="slideConfig2" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <div style="margin-bottom:20px;" ngxSlickItem class="" *ngFor="let h of homeNewsList.slice().reverse()">
+                        <a href="">
+                            <img style="height:144px; width:200px;" src="{{h.image}}" alt="">
+                            <span class="li_news-title">{{h.title}}</span>
+                        </a>
+                    </div>
+                </ngx-slick-carousel>
             </div>
         </div>
     </div>
