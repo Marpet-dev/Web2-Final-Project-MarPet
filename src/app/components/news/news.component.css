@@ -104,6 +104,7 @@ div {
 .ul-box a span {
     margin-left: 10px;
     width: 100%;
+    text-align: justify;
 }
 
 .ul-box a span:hover {
@@ -289,7 +290,7 @@ div {
         height: 200px;
     }
     .li_news-title {
-        width: 140px;
+        width: 100%;
         text-align: left;
     }
     .ul-box {
