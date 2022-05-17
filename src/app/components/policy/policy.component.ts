@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PolicyComponent implements OnInit {
   slides = [
-    { img: 'https://cdn-icons-png.flaticon.com/128/196/196578.png' },
     { img: 'https://cdn-icons-png.flaticon.com/128/196/196566.png' },
+    { img: 'https://cdn-icons-png.flaticon.com/128/196/196578.png' },
     { img: 'https://cdn-icons-png.flaticon.com/128/196/196539.png' },
     { img: 'https://cdn-icons-png.flaticon.com/128/196/196559.png' },
     { img: 'https://cdn-icons-png.flaticon.com/128/196/196543.png' },
