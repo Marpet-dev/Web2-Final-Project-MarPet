@@ -25,7 +25,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="pass">Mật khẩu<span>*</span></label>
-                    <input type="pass" id="pass" class="form-control" formControlName="pass" [class.is-invalid]="regForm.controls['pass'].invalid 
+                    <input name="pass" type="pass" id="pass" class="form-control" 
+                    formControlName="pass" [class.is-invalid]="regForm.controls['pass'].invalid 
                     && regForm.controls['pass'].touched">
                     <small class="text-danger" *ngIf="regForm.controls['pass'].invalid 
                     && regForm.controls['pass'].touched">
@@ -33,10 +34,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="confirmPass">Xác nhận mật khẩu<span>*</span></label>
-                    <input type="confirmPass" id="confirmPass" class="form-control" formControlName="confirmPass" [class.is-invalid]="regForm.controls['confirmPass'].invalid 
+                    <input name="confirmPass" type="confirmPass" id="confirmPass" class="form-control" 
+                    formControlName="confirmPass" [class.is-invalid]="regForm.errors?.['misMatch']">
+                    <!-- <small class="text-danger" *ngIf="regForm.controls['confirmPass'].invalid 
                     && regForm.controls['confirmPass'].touched">
-                    <small class="text-danger" *ngIf="regForm.controls['confirmPass'].invalid 
-                    && regForm.controls['confirmPass'].touched">
+                    Mày phải nhập đúng</small> -->
+                    <small class="text-danger" *ngIf="regForm.errors?.['misMatch']">
                     Mày phải nhập đúng</small>
                 </div>
                 <div class="signup_form-row mb-3">
@@ -61,7 +64,7 @@
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
                 </div>
-                <div class="signup_form-button">
+                <div class="signup_form-button form-group">
                     <button class="signup_button" id="reBtn">Tạo tài khoản</button>
                 </div>
                 <br>

@@ -21,17 +21,15 @@ export class SignUpComponent implements OnInit {
       confirmPass: ['', [Validators.required, Validators.minLength(8)]],
       phonenumber:['', [Validators.required, Validators.pattern("^((\\+84-?)|0)?[0-9]{9}$")]]
     }, {
-      validators: passwordValidator
+      validators: [passwordValidator]
     })
   }
-  get f(){
-    return this.regForm.controls
-  }
+ 
   // MustMatch(controlName: string, matchingControlName:string){
   //   return(formGroup: FormGroup)=>{
   //     const control = formGroup.controls[controlName];
   //     const matchingControl = formGroup.controls[matchingControlName];
-  //     if(matchingControl.errors && !matchingControl.errors.MustMatch){
+  //     if(matchingControl.errors && !matchingControl.errors.mustMatch){
   //       return
   //     }
   //     if(control.value !== matchingControl.value){

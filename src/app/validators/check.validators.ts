@@ -1,4 +1,4 @@
-import { AbstractControl, ValidatorFn } from "@angular/forms";
+import { AbstractControl, FormGroup, ValidatorFn } from "@angular/forms";
 
 export function customValidator(regexp: RegExp): ValidatorFn{
     return (control:AbstractControl):{[key:string]:any} | null=>{
@@ -15,3 +15,5 @@ export function passwordValidator(control: AbstractControl):{[key:string]:any} |
     }
     return pass && confirmPass && pass.value !== confirmPass.value ? {misMatch: true} : null
 }
+
+
