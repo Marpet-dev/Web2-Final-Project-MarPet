@@ -14,27 +14,30 @@
             <br>
         </div>
         <div class="signup_content">
-            <form class="register_form" id="register_form">
-                <div class="signup_form-row mb-3 mb-3">
-                    <label for="email" class="signup_form-label">Email của bạn <span>*</span></label> <br>
-                    <input type="text" name="email" class="signup_form-input" id="reEmail">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
+            <form class="register_form" [formGroup]="regForm">
+                <div class="mb-3">
+                    <label for="email">Email của bạn<span>*</span></label>
+                    <input type="email" id="email" class="form-control" formControlName="email" [class.is-invalid]="regForm.controls['email'].invalid 
+                    && regForm.controls['email'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['email'].invalid 
+                    && regForm.controls['email'].touched">
+                    Email không hợp lệ</small>
                 </div>
-                <div class="signup_form-row mb-3 mb-3">
-                    <label for="password" class="signup_form-label">Mật khẩu<span>*</span></label> <br>
-                    <input type="password" name="password" class="signup_form-input" id="repw">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle" id="fa-exclamation-circle"></i>
-                    <small>Error message</small>
+                <div class="mb-3">
+                    <label for="pass">Mật khẩu<span>*</span></label>
+                    <input type="pass" id="pass" class="form-control" formControlName="pass" [class.is-invalid]="regForm.controls['pass'].invalid 
+                    && regForm.controls['pass'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['pass'].invalid 
+                    && regForm.controls['pass'].touched">
+                    Mật khẩu tối thiểu 8 ký tự</small>
                 </div>
-                <div class="signup_form-row mb-3">
-                    <label for="password2" class="signup_form-label">Nhập lại mật khẩu<span>*</span></label> <br>
-                    <input type="password" name="password2" class="signup_form-input" id="rerwp">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
+                <div class="mb-3">
+                    <label for="confirmPass">Xác nhận mật khẩu<span>*</span></label>
+                    <input type="confirmPass" id="confirmPass" class="form-control" formControlName="confirmPass" [class.is-invalid]="regForm.controls['confirmPass'].invalid 
+                    && regForm.controls['confirmPass'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['confirmPass'].invalid 
+                    && regForm.controls['confirmPass'].touched">
+                    Mày phải nhập đúng</small>
                 </div>
                 <div class="signup_form-row mb-3">
                     <label for="name" class="signup_form-label">Họ và Tên <span>*</span></label> <br>
@@ -43,12 +46,13 @@
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
                 </div>
-                <div class="signup_form-row mb-3">
-                    <label for="phonenumber" class="signup_form-label">Số điện thoại <span>*</span></label> <br>
-                    <input type="text" name="phonenumber" class="signup_form-input" id="phonenumber">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
+                <div class="mb-3">
+                    <label for="phonenumber">Số điện thoại<span>*</span></label>
+                    <input type="phonenumber" id="phonenumber" class="form-control" formControlName="phonenumber" [class.is-invalid]="regForm.controls['phonenumber'].invalid 
+                    && regForm.controls['phonenumber'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['phonenumber'].invalid 
+                    && regForm.controls['phonenumber'].touched">
+                    Vui lòng nhập đúng cú pháp</small>
                 </div>
                 <div class="signup_form-row mb-3">
                     <label for="address" class="signup_form-label">Địa chỉ <span>*</span></label> <br>
