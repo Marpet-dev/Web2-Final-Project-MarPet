@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProductsService } from '../../service/products.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ProductsService } from 'src/app/service/products.service';
+import { CatProductsService } from '../../service/catProducts.service';
 
 @Component({
   selector: 'app-cat',
@@ -14,7 +15,7 @@ export class CatComponent implements OnInit {
   getType: any;
   p: boolean = false;
   constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
-     private productsService: ProductsService) { }
+     ) { }
 
   ngOnInit(): void {
     // this._service.getProducts().subscribe(
@@ -59,11 +60,21 @@ export class CatComponent implements OnInit {
     }
   }
   navigateType(type: string):void {
-    this._router.navigate(['/cat', type])
+    this._router.navigateByUrl(`/cat?type=${type}`);
+    this.loadProducts()
   }
 
- 
+  loadProducts(){
+    this._activatedRoute.queryParams.subscribe((params: Params) => {
+      const typeStr = Object.values(params)[0]
+      this._service.getProductsType(typeStr).subscribe(
+        {
+          next: (data) => this.products = data,
+          error: (err) => this.errMsg = err.message
+        })
+     
+    });
 
- 
+  }
 
 }

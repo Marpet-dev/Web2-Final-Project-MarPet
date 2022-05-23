@@ -6,14 +6,27 @@ import { Product } from '../interface/Product';
   providedIn: 'root'
 })
 export class ProductsService {
-  url = '../../assets/data/products.json';
+  baseUrl = 'http://localhost:3000';
   constructor(private _http: HttpClient) { }
   getProducts(): Observable<Product[]> {
-    return this._http.get<Product[]>(this.url)
+    return this._http.get<Product[]>(`${this.baseUrl}/products`)
       .pipe(
         retry(2), catchError(this.handleError)
       )
   }
+  getProductsDogs(): Observable<Product[]> {
+    return this._http.get<Product[]>(`${this.baseUrl}/products/dogs`)
+      .pipe(
+        retry(2), catchError(this.handleError)
+      )
+  }
+  getProductsType(a:string): Observable<Product[]> {
+    return this._http.get<Product[]>(`${this.baseUrl}/products/category/?type=${a}`)
+      .pipe(
+        retry(2), catchError(this.handleError)
+      )
+  }
+
   handleError(err: HttpErrorResponse) {
     return throwError(() => new Error(err.message)
     )
