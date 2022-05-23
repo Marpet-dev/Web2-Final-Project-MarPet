@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProductsService } from '../../service/products.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ProductsService } from 'src/app/service/products.service';
+// import { DogProductsService } from '../../service/dogProducts.service';
 
 @Component({
   selector: 'app-dog',
@@ -12,8 +13,8 @@ export class DogComponent implements OnInit {
   errMsg: string = '';
   getType: any;
   p: boolean = false;
-  constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
-     private productsService: ProductsService) { }
+  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
     // this._service.getProducts().subscribe(
@@ -21,7 +22,7 @@ export class DogComponent implements OnInit {
     //     next: (data) => this.products = data,
     //     error: (err) => this.errMsg = err.message
     //   })
-    this.getProducts();
+    this.getProductsDogs();
 
     // this._activatedRoute.paramMap.subscribe(
     //   (param) => {
@@ -31,14 +32,16 @@ export class DogComponent implements OnInit {
     //     }
     //   }
     // )
-  
+    
+    
    
   }
   
+
   
 
-  getProducts() {
-    this._service.getProducts().subscribe(
+  getProductsDogs() {
+    this._service.getProductsDogs().subscribe(
       {
         next: (data) => this.products = data,
         error: (err) => this.errMsg = err.message
@@ -56,17 +59,33 @@ export class DogComponent implements OnInit {
       return "none !important";
     }
   }
-  // checkDog2(c: string) {
-  //   this.p = c.substring(0, 1) == "d" ? true : false;
-  //   if(this.p==true){
-  //     return "";
-  //   }
-  //   else{
-  //     return "hidden !important";
-  //   }
-  // }
+  
   navigateType(type: string):void {
-    this._router.navigate(['/dog', type])
+ 
+   
+    this._router.navigateByUrl(`/dog?type=${type}`);
+    this.loadProducts()
+  
+  }
+
+
+  
+  
+
+
+
+  
+  loadProducts(){
+    this._activatedRoute.queryParams.subscribe((params: Params) => {
+      const typeStr = Object.values(params)[0]
+      this._service.getProductsType(typeStr).subscribe(
+        {
+          next: (data) => this.products = data,
+          error: (err) => this.errMsg = err.message
+        })
+     
+    });
+
   }
 
  
