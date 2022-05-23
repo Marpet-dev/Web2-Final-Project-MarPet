@@ -14,7 +14,7 @@
             <br>
         </div>
         <div class="signup_content">
-            <form class="register_form" [formGroup]="regForm">
+            <form class="register_form" [formGroup]="regForm" (ngSubmit)="submitUserData(regForm)" >
                 <div class="mb-3">
                     <label for="email">Email của bạn<span>*</span></label>
                     <input type="email" id="email" class="form-control" formControlName="email" [class.is-invalid]="regForm.controls['email'].invalid 
@@ -25,11 +25,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="pass">Mật khẩu<span>*</span></label>
-                    <input name="pass" type="pass" id="pass" class="form-control" 
-                    formControlName="pass" [class.is-invalid]="regForm.controls['pass'].invalid 
-                    && regForm.controls['pass'].touched">
-                    <small class="text-danger" *ngIf="regForm.controls['pass'].invalid 
-                    && regForm.controls['pass'].touched">
+                    <input name="password" type="password" id="pass" class="form-control" 
+                    formControlName="password" [class.is-invalid]="regForm.controls['password'].invalid 
+                    && regForm.controls['password'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['password'].invalid 
+                    && regForm.controls['password'].touched">
                     Mật khẩu tối thiểu 8 ký tự</small>
                 </div>
                 <div class="mb-3">
@@ -43,8 +43,8 @@
                     Mày phải nhập đúng</small>
                 </div>
                 <div class="signup_form-row mb-3">
-                    <label for="name" class="signup_form-label">Họ và Tên <span>*</span></label> <br>
-                    <input type="text" name="name" class="signup_form-input" id="fullname">
+                    <label for="fullName" class="signup_form-label">Họ và Tên <span>*</span></label> <br>
+                    <input type="text" name="fullName" class="signup_form-input" id="fullName">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
@@ -65,7 +65,7 @@
                     <small>Error message</small>
                 </div>
                 <div class="signup_form-button form-group">
-                    <button class="signup_button" id="reBtn">Tạo tài khoản</button>
+                    <button class="signup_button" id="reBtn" type="submit">Tạo tài khoản</button>
                 </div>
                 <br>
                 <div class="signup_subtitle-text">
