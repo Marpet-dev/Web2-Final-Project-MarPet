@@ -39,19 +39,21 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
 // import {MaterialExampleModule} from '../material.module';
 // import {FormFieldAppearanceExample} from './form-field-appearance-example';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DogComponent,
     CatComponent,
+    SignUpComponent,
     PetServicesComponent,
     HeaderComponent,
     FooterComponent,
@@ -95,13 +97,14 @@ FavoriteComponent
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,    
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+      registrationStrategy: 'registerWhenStable:30000',
+      
+    }),
   ],
   // providers: [],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
