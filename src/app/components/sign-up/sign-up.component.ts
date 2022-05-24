@@ -31,9 +31,9 @@ users: any;
       email: ['', Validators.email],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPass: ['', [Validators.required, Validators.minLength(8)]],
+      fullName:['', Validators.required],
       phonenumber:['', [Validators.required, Validators.pattern("^((\\+84-?)|0)?[0-9]{9}$")]],
-      fullName:['', Validators.required, Validators.minLength(8)],
-      address:['', Validators.required]
+      address:['', Validators.required, Validators.minLength(8)]
     }, {
       validators: [passwordValidator]
     });

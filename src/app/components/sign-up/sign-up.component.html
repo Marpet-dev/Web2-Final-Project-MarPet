@@ -34,17 +34,20 @@
                 </div>
                 <div class="mb-3">
                     <label for="confirmPass">Xác nhận mật khẩu<span>*</span></label>
-                    <input name="confirmPass" type="confirmPass" id="confirmPass" class="form-control" 
+                    <input name="confirmPass" type="password" id="confirmPass" class="form-control" 
                     formControlName="confirmPass" [class.is-invalid]="regForm.errors?.['misMatch']">
                     <!-- <small class="text-danger" *ngIf="regForm.controls['confirmPass'].invalid 
                     && regForm.controls['confirmPass'].touched">
                     Mày phải nhập đúng</small> -->
                     <small class="text-danger" *ngIf="regForm.errors?.['misMatch']">
-                    Mày phải nhập đúng</small>
+                    KH phải nhập đúng</small>
                 </div>
                 <div class="signup_form-row mb-3">
                     <label for="fullName" class="signup_form-label">Họ và Tên <span>*</span></label> <br>
-                    <input type="text" name="fullName" class="signup_form-input" id="fullName">
+                    <input type="text" name="fullName" id="fullName" class="form-control" formControlName="fullName" [class.is-invalid]="regForm.controls['fullName'].invalid 
+                    && regForm.controls['fullName'].touched" >
+                    <small class="text-danger" *ngIf="regForm.controls['fullName'].invalid 
+                    && regForm.controls['fullName'].touched">Họ và tên phải có tối thiểu 8 kí tự</small>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
@@ -59,7 +62,9 @@
                 </div>
                 <div class="signup_form-row mb-3">
                     <label for="address" class="signup_form-label">Địa chỉ <span>*</span></label> <br>
-                    <input type="text" name="address" class="signup_form-input" id="address">
+                    <input type="text" name="address" class="form-control" formControlName="address" id="address" [class.is-invalid]="regForm.controls['address'].invalid 
+                    && regForm.controls['address'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['address'].invalid && regForm.controls['address'].touched"></small>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
