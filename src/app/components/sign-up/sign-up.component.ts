@@ -19,25 +19,13 @@ export class SignUpComponent implements OnInit {
       email: ['', Validators.email],
       pass: ['', [Validators.required, Validators.minLength(8)]],
       confirmPass: ['', [Validators.required, Validators.minLength(8)]],
-      phonenumber:['', [Validators.required, Validators.pattern("^((\\+84-?)|0)?[0-9]{9}$")]]
+      phonenumber:['', [Validators.required, Validators.pattern("^((\\+84-?)|0)?[0-9]{9}$")]],
+      address:['', Validators.required]
     }, {
       validators: [passwordValidator]
     })
   }
- 
-  // MustMatch(controlName: string, matchingControlName:string){
-  //   return(formGroup: FormGroup)=>{
-  //     const control = formGroup.controls[controlName];
-  //     const matchingControl = formGroup.controls[matchingControlName];
-  //     if(matchingControl.errors && !matchingControl.errors.mustMatch){
-  //       return
-  //     }
-  //     if(control.value !== matchingControl.value){
-  //       matchingControl.setErrors({MustMatch:true})
-  //     }
-  //     else{
-  //       matchingControl.setErrors(null)
-  //     }
-  //   }
-  // }
+  get username(){
+    return this.regForm.controls['username']
+  }
 }

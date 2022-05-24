@@ -17,11 +17,12 @@ export class SignInComponent implements OnInit {
     this.regForm = this._formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3), customValidator(/\@|\#|\$|\%|\^|\&/g)]],
       email: ['', Validators.email],
-      pass: ['', Validators.required, Validators.minLength(8)],
+      pass: ['', [Validators.required, Validators.minLength(8)]],
       confirmPass: ['', Validators.required]
-    }, {Validators: [passwordValidator]})
+    },  {Validators: [passwordValidator]})
   }
-  get username(){
-    return this.regForm.controls['username']
-  }
+
+  // get pass(){
+  //   return this.regForm.controls['pass']
+  // }
 }
