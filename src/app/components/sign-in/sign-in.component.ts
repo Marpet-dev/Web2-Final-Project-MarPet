@@ -15,9 +15,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.regForm = this._formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(3), customValidator(/\@|\#|\$|\%|\^|\&/g)]],
       email: ['', Validators.email],
-      pass: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPass: ['', Validators.required]
     },  {Validators: [passwordValidator]})
   }

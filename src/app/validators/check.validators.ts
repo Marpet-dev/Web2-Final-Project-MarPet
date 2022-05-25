@@ -8,12 +8,12 @@ export function customValidator(regexp: RegExp): ValidatorFn{
 }
 
 export function passwordValidator(control: AbstractControl):{[key:string]:any} | null{
-    const pass = control.get('pass');
+    const password = control.get('password');
     const confirmPass = control.get('confirmPass');
-    if (pass && pass.pristine || (confirmPass && confirmPass.pristine)){
+    if (password && password.pristine || (confirmPass && confirmPass.pristine)){
         return null;
     }
-    return pass && confirmPass && pass.value !== confirmPass.value ? {misMatch: true} : null
+    return password && confirmPass && password.value !== confirmPass.value ? {misMatch: true} : null
 }
 
 

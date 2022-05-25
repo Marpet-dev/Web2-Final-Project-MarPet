@@ -24,12 +24,12 @@
                     Email không hợp lệ</small>
                 </div>
                 <div class="mb-3">
-                    <label for="pass">Mật khẩu<span>*</span></label>
-                    <input name="pass" type="password" id="pass" class="form-control" 
-                    formControlName="pass" [class.is-invalid]="regForm.controls['pass'].invalid 
-                    && regForm.controls['pass'].touched">
-                    <small class="text-danger" *ngIf="regForm.controls['pass'].invalid 
-                    && regForm.controls['pass'].touched">
+                    <label for="password">Mật khẩu<span>*</span></label>
+                    <input name="password" type="password" id="password" class="form-control" 
+                    formControlName="password" [class.is-invalid]="regForm.controls['password'].invalid 
+                    && regForm.controls['password'].touched">
+                    <small class="text-danger" *ngIf="regForm.controls['password'].invalid 
+                    && regForm.controls['password'].touched">
                     Mật khẩu tối thiểu 8 ký tự</small>
                     
                 </div>
@@ -41,17 +41,17 @@
                     Vui lòng nhập đúng</small>
                 </div>
                 <div class="mb-3">
-                    <label for="username" class="signup_form-label">Họ và Tên <span>*</span></label> <br>
-                    <input type="text" name="username" class="form-control" id="username" formControlName="username"
-                    [class.is-invalid]="username.invalid && username.touched">
-                    <small class="text-danger" *ngIf="username.invalid 
-                    && username.touched">Username tối thiểu phải có 3 ký tự</small>
-                    <small class="text-danger" *ngIf="username.errors?.['nameNotMatch']">Username không được chứa ký tự đặc biệt</small>
+                    <label for="fullName" class="signup_form-label">Họ và Tên <span>*</span></label> <br>
+                    <input type="text" name="fullName" class="form-control" id="fullName" formControlName="fullName"
+                    [class.is-invalid]="fullName.invalid && fullName.touched">
+                    <small class="text-danger" *ngIf="fullName.invalid 
+                    && fullName.touched">Phải điền tối thiểu 3 ký tự</small>
+                    <small class="text-danger" *ngIf="fullName.errors?.['nameNotMatch']">Họ và tên không được chứa ký tự đặc biệt</small>
 
                 </div>
                 <div class="mb-3">
                     <label for="phonenumber">Số điện thoại<span>*</span></label>
-                    <input type="text" id="username" class="form-control" formControlName="phonenumber" [class.is-invalid]="regForm.controls['username'].invalid && regForm.controls['username'].touched">
+                    <input type="text" id="phonenumber" class="form-control" formControlName="phonenumber" [class.is-invalid]="regForm.controls['username'].invalid && regForm.controls['username'].touched">
                     <small class="text-danger" *ngIf="regForm.controls['phonenumber'].invalid 
                     && regForm.controls['phonenumber'].touched">
                     Vui lòng nhập đúng cú pháp</small>

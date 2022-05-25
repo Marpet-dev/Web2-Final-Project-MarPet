@@ -27,9 +27,9 @@ users: any;
 
   ngOnInit(): void {
     this.regForm = this._formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(3), customValidator(/\@|\#|\$|\%|\^|\&/g)]],
+      fullName: ['', [Validators.required, Validators.minLength(3), customValidator(/\@|\#|\$|\%|\^|\&/g)]],
       email: ['', Validators.email],
-      pass: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPass: ['', [Validators.required, Validators.minLength(8)]],
       phonenumber:['', [Validators.required, Validators.pattern("^((\\+84-?)|0)?[0-9]{9}$")]],
       address:['', Validators.required]
@@ -63,8 +63,8 @@ users: any;
   //   })
   // }
 
-  get username() {
-    return this.regForm.controls['username']
+  get fullName() {
+    return this.regForm.controls['fullName']
   }
   submitUserData(form:NgForm){
     console.log(form.value)
