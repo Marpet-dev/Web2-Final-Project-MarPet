@@ -51,7 +51,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="phonenumber">Số điện thoại<span>*</span></label>
-                    <input type="text" id="phonenumber" class="form-control" formControlName="phonenumber" [class.is-invalid]="regForm.controls['username'].invalid && regForm.controls['username'].touched">
+                    <input type="text" id="phonenumber" class="form-control" formControlName="phonenumber" name="phonenumber" [class.is-invalid]="regForm.controls['phonenumber'].invalid && regForm.controls['phonenumber'].touched">
                     <small class="text-danger" *ngIf="regForm.controls['phonenumber'].invalid 
                     && regForm.controls['phonenumber'].touched">
                     Vui lòng nhập đúng cú pháp</small>
