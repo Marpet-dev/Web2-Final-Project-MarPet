@@ -11,11 +11,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-users: any;
 
-
+  
   public regForm:any;
- 
 
   user:User = new User();
 
@@ -38,6 +36,7 @@ users: any;
     });
 
     // this.getUserData()
+   
   }
  
   // MustMatch(controlName: string, matchingControlName:string){
@@ -83,4 +82,7 @@ users: any;
  alert("Existed!");
 }
   }
+
+  
+ 
 }
