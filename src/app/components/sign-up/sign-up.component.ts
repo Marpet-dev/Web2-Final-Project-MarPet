@@ -17,11 +17,12 @@ export class SignUpComponent implements OnInit {
 
   user:User = new User();
 
-  constructor(private _formBuilder: FormBuilder,private _service: RegisterService, @Inject(Injector) private injector: Injector) { }
+  constructor(private _formBuilder: FormBuilder,private _service: RegisterService,private _toast: ToastrService) { }
 
-  private get _toast(): ToastrService {
-    return this.injector.get(ToastrService);
-  }
+  // @Inject(Injector) private injector: Injector
+  // private get _toast(): ToastrService {
+  //   return this.injector.get(ToastrService);
+  // }
 
   ngOnInit(): void {
     this.regForm = this._formBuilder.group({
@@ -66,6 +67,7 @@ export class SignUpComponent implements OnInit {
     return this.regForm.controls['fullName']
   }
   submitUserData(form:NgForm){
+    this._toast.success("Created Successfully!","Created");
     console.log(form.value)
     Object.assign(this.user, form.value)
     console.log('Model: ',this.user)

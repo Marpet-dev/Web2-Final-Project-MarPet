@@ -97,7 +97,14 @@ FavoriteComponent
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,   
+    ToastrModule.forRoot({
+      timeOut: 3000,
+    progressBar: false,
+    // progressAnimation: "increasing",
+    // preventDuplicates: true
+    }
+    ), 
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
