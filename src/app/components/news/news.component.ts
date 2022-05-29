@@ -103,8 +103,10 @@ export class NewsComponent implements OnInit {
     console.log('beforeChange');
   }
   subnewsList: any[] = [];
-  homeNewsList: any;
+  homeNewsList: any[]=[];
   selectedId: any;
+  selectId: any;
+ 
 
   constructor(private _subnew: NewsService, private _homeNews: NewsService, private _router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -131,6 +133,15 @@ export class NewsComponent implements OnInit {
         }
       }
     )
+    // this.activatedRoute.paramMap.subscribe(
+    //   (param) => {
+    //     let hid = param.get('id')
+    //     if (hid != null) {
+    //       this.selectId = parseInt(hid);
+    //     }
+    //   }
+    // )
+  
   }
 
   onselect(data: any): void {
@@ -139,6 +150,11 @@ export class NewsComponent implements OnInit {
   isSelected(s: any): boolean {
     return s.id === this.selectedId
   }
+  // isSelect(h: any): boolean {
+  //   return h.id === this.selectId
+  // }
+
+  
 
 
 }

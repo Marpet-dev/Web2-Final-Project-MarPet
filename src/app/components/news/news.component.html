@@ -31,8 +31,8 @@
                 (breakpoint)="breakpoint($event)"
                 (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
-                    <div style="margin-bottom:20px;" ngxSlickItem class="" *ngFor="let h of homeNewsList.slice().reverse()">
-                        <a href="">
+                    <div style="margin-bottom:20px;" ngxSlickItem class="homenews item {{isSelected(h) ? 'selected': ''}}" *ngFor="let h of homeNewsList.slice().reverse()">
+                        <a routerLink="/news/{{h.id}}">
                             <img style="height:144px; width:200px;" src="{{h.image}}" alt="">
                             <span class="li_news-title">{{h.title}}</span>
                         </a>
@@ -71,11 +71,11 @@
 <p>sad</p>
 </div> -->
 <div ngxSlickItem class="subnews item {{isSelected(s) ? 'selected': ''}}" *ngFor="let s of subnewsList.slice().reverse()">
-    <a href="/news/{{s.id}}">
+    <a routerLink="/news/{{s.id}}">
         <img src="{{s.image}}" alt="">
         <p style="text-align: center">{{s.title}}</p>
     </a>
-    <button class="btn_in_homepage" type="button"><a href="/news/{{s.id}}">XEM THÊM</a></button>
+    <button class="btn_in_homepage" type="button"><a routerLink="/news/{{s.id}}">XEM THÊM</a></button>
 </div>
 </ngx-slick-carousel>
 <!-- <button (click)="addSlide()">Add</button>
