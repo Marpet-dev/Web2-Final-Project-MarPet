@@ -27,6 +27,13 @@ export class ProductsService {
       )
   }
 
+  getProductsById(id:string): Observable<Product[]> {
+    return this._http.get<Product[]>(`${this.baseUrl}/products/${id}`)
+      .pipe(
+        retry(2), catchError(this.handleError)
+      )
+  }
+
   handleError(err: HttpErrorResponse) {
     return throwError(() => new Error(err.message)
     )

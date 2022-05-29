@@ -62,6 +62,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { ProductsDetailComponent } from './components/products-detail/products-detail.component';
 const routes: Routes = [
   {
     path: '',
@@ -97,6 +98,10 @@ const routes: Routes = [
     component: NewDetailComponent
   },
   {
+    path: 'products/:id', 
+    component: ProductsDetailComponent
+  },
+  {
     path: 'pet-services', 
     component: PetServicesComponent
   },
@@ -128,6 +133,7 @@ const routes: Routes = [
     path: 'discount50', 
     component: Discount50Component
   },
+ 
   // Điền tiếp ở dưới dòng này nha
   
 

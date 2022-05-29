@@ -47,6 +47,8 @@ import { environment } from '../environments/environment';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ToastrModule } from 'ngx-toastr';
+import { ProductsDetailComponent } from './components/products-detail/products-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +69,9 @@ EmailresetComponent,
 Discount50Component,
 ShoppingCartComponent,
 PagenotfoundComponent,
-FavoriteComponent
+FavoriteComponent,
+ProductsDetailComponent,
+
     
   ],
   imports: [
