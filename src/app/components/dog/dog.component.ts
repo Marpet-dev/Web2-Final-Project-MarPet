@@ -12,6 +12,7 @@ import { ProductsService } from 'src/app/service/products.service';
 export class DogComponent implements OnInit {
   products: any;
   errMsg: string = '';
+  productCategory: any;
   getType: any;
   p: boolean = false;
   constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, private cartService : CartService
@@ -48,16 +49,16 @@ export class DogComponent implements OnInit {
         error: (err) => this.errMsg = err.message
       })
 
-
-
   }
+
+  
+
   checkDog(products: any[]): any[] {
     return products.filter(p => p.category.substring(0,1) === 'd');
   }
   
   navigateType(type: string):void {
  
-   
     this._router.navigateByUrl(`/dog?type=${type}`);
     this.loadProducts()
   

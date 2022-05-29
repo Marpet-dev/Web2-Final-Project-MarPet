@@ -4,7 +4,6 @@
             <h2>Danh mục</h2>
             <ul class="category-list">
                 <li class="category-item category-item--active">
-                 
                     <a (click)="navigateType('c_fo')">Thức ăn</a> 
                 </li>
                 <li class="category-item category-item--active">
@@ -28,11 +27,11 @@
             </ul>
         </div>
     </div>
-
     <div class="row">
-        <div    *ngFor="let p of checkCat(products)" class="products d-flex justify-content-center col-xl-4 col-md-6">
+        <div class="headline">{{title}}</div>
+        <div routerLink="/products/{{p._id}}" *ngFor="let p of checkCat(products)" class="products d-flex justify-content-center col-xl-4 col-md-6">
             <div class="product w-100">
-                <div class="productitem">
+                <div class="product-item">
                     <div class="product-top text-center">
                         <img src="../../../assets/{{p.image[0]}}" alt="Error">
                     </div>

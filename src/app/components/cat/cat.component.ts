@@ -11,10 +11,10 @@ import { CatProductsService } from '../../service/catProducts.service';
 export class CatComponent implements OnInit {
   products: any;
   errMsg: string = '';
-  gachChan: string = "";
   getType: any;
   p: boolean = false;
-  constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
+  title: any;
+  constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, 
      ) { }
 
   ngOnInit(): void {
@@ -33,11 +33,15 @@ export class CatComponent implements OnInit {
     //     }
     //   }
     // )
-  
+    if (this.products.category == 'c_fo'){
+      this.title == 'thức ăn';
+    }
    
   }
   
   
+
+
 
   getProducts() {
     this._service.getProducts().subscribe(
@@ -58,6 +62,13 @@ export class CatComponent implements OnInit {
     this._router.navigateByUrl(`/cat?type=${type}`);
     this.loadProducts()
   }
+
+  // headline(type: string):void {
+  //   this._router.navigateByUrl(`/cat?type=${type}`);
+  //   if (type == 'c_fo'){
+  //     this.title == 'thức ăn'
+  //   }
+  // }
 
   loadProducts(){
     this._activatedRoute.queryParams.subscribe((params: Params) => {
