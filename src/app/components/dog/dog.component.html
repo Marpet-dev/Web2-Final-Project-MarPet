@@ -4,7 +4,6 @@
             <h2>Danh mục</h2>
             <ul class="category-list">
                 <li class="category-item category-item--active">
-                    <!-- <a routerLink="/products/category" [queryParams]="{type: 'd_fo'}" routerLinkActive="active">Thức ăn</a>  -->
                     <a (click)="navigateType('d_fo')">Thức ăn</a> 
                 </li>
                 <li class="category-item category-item--active">
@@ -33,8 +32,10 @@
     <!-- [style.visibility]="checkDog2(p.category)" -->
         <!-- <div style="display: none !important;" class="products d-flex justify-content-center col-xl-4 col-md-6">s</div> -->
     <div class="row">
-        <div class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of checkDog(products)">
-            <div class="product w-100" *ngIf="(p.category.substring(0, 1) == 'd')">
+        <div class="headline" id="title-pro" ng-repeat=""></div>
+        
+        <div routerLink="/products/{{p._id}}" class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of checkDog(products)">
+            <div class="product w-100">
                 <div class="productitem">
                     <div class="product-top text-center">
                         <img src="../../../assets/{{p.image[0]}}" alt="Error">

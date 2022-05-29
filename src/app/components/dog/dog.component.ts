@@ -79,7 +79,9 @@ export class DogComponent implements OnInit {
         })
      
     });
+    
 
+    
   }
 
  
