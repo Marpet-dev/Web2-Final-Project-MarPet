@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 import { ProductsService } from 'src/app/service/products.service';
 // import { DogProductsService } from '../../service/dogProducts.service';
 
@@ -13,7 +14,7 @@ export class DogComponent implements OnInit {
   errMsg: string = '';
   getType: any;
   p: boolean = false;
-  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
+  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, private cartService : CartService
     ) { }
 
   ngOnInit(): void {
@@ -85,7 +86,10 @@ export class DogComponent implements OnInit {
     
   }
 
- 
+  addtocart(item: any){
+    this.cartService.addtoCart(item);
+  }
+  
 
  
 

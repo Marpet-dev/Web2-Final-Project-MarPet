@@ -2,19 +2,25 @@ import { AvatarService } from '../../service/avatar.service'
 import { SendavatarService } from '../../service/sendavatar.service';
 import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
+import { CartService } from 'src/app/service/cart.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public totalItem : number = 0;
   avatarRandom: any;
   // message: any;
   message="https://images.dog.ceo/breeds/springer-english/n02102040_1266.jpg";
-  constructor(private scroll: ViewportScroller, private _service: AvatarService, private stageColorService: SendavatarService) { }
+  constructor(private scroll: ViewportScroller, private _service: AvatarService, private stageColorService: SendavatarService, private cartService : CartService) { }
   // message:any;
   // message=document.getElementById("avatarString")?.innerText;
   ngOnInit(){
+    this.cartService.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
     this._service.getSampleData().subscribe({
       next: data=>{
         // console.log(data);
