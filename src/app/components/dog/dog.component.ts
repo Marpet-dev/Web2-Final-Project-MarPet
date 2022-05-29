@@ -50,14 +50,8 @@ export class DogComponent implements OnInit {
 
 
   }
-  checkDog(c: string) {
-    this.p = c.substring(0, 1) == "d" ? true : false;
-    if(this.p==true){
-      return "";
-    }
-    else{
-      return "none !important";
-    }
+  checkDog(products: any[]): any[] {
+    return products.filter(p => p.category.substring(0,1) === 'd');
   }
   
   navigateType(type: string):void {

@@ -30,11 +30,8 @@
     </div>
 
     <div class="row">
-        <div class="headline">
-            
-        </div>
-        <div class="products d-flex justify-content-center col-xl-4 col-md-6"  *ngFor="let p of products">
-            <div class="product w-100" [style.display]="checkCat(p.category)">
+        <div    *ngFor="let p of checkCat(products)" class="products d-flex justify-content-center col-xl-4 col-md-6">
+            <div class="product w-100">
                 <div class="productitem">
                     <div class="product-top text-center">
                         <img src="../../../assets/{{p.image[0]}}" alt="Error">
@@ -49,6 +46,5 @@
                     </div>
                 </div>
             </div>
-           
         </div>
     </div>

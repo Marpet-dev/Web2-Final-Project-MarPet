@@ -50,15 +50,10 @@ export class CatComponent implements OnInit {
 
   }
   
-  checkCat(c: string) {
-    this.p = c.substring(0, 1) == "c" ? true : false;
-    if(this.p==true){
-      return "";
-    }
-    else{
-      return "none";
-    }
+  checkCat(products: any[]): any[] {
+    return products.filter(p => p.category.substring(0,1) === 'c');
   }
+  
   navigateType(type: string):void {
     this._router.navigateByUrl(`/cat?type=${type}`);
     this.loadProducts()
