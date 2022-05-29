@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angula
 import { customValidator, passwordValidator } from 'src/app/validators/check.validators';
 import { User } from '../../models/user';
 import { RegisterService } from '../../service/register.service';
-import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
 
   user:User = new User();
 
-  constructor(private _formBuilder: FormBuilder,private _service: RegisterService,private _toast: ToastrService) { }
+  constructor(private _formBuilder: FormBuilder,private _service: RegisterService) { }
 
   // @Inject(Injector) private injector: Injector
   // private get _toast(): ToastrService {
@@ -67,18 +67,11 @@ export class SignUpComponent implements OnInit {
     return this.regForm.controls['fullName']
   }
   submitUserData(form:NgForm){
-    this._toast.success("Created Successfully!","Created");
-    console.log(form.value)
+   
     Object.assign(this.user, form.value)
     console.log('Model: ',this.user)
   if (this.user._id=='') {
   this._service.postUser(this.user).subscribe(res=>{
-    let resUserData=JSON.parse(JSON.stringify(res));
-    if(resUserData.message ==="Success"){
-      this._toast.success("Created Successfully!","Created");
-    }else{
-      alert("Failed!");
-    }
   })
 } else {
  alert("Existed!");
