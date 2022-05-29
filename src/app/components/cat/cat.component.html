@@ -30,6 +30,9 @@
     </div>
 
     <div class="row">
+        <div class="headline">
+            
+        </div>
         <div class="products d-flex justify-content-center col-xl-4 col-md-6"  *ngFor="let p of products">
             <div class="product w-100" [style.display]="checkCat(p.category)">
                 <div class="productitem">
@@ -39,9 +42,9 @@
                     <div class="product-info">
                         <div class="product-label text-center">{{p.label}}</div><br>
                         <div class="product-name text-center">{{p.name}}</div><br>
-                        <div class="product-price text-center">{{p.price[0]}}</div>  
-                        <div class="product-discount text-center">
-                            {{p.discount}}
+                        <div class="product-price text-center" [class.text-decoration-line-through]="p.discount==''?false:true">{{p.price[0] | number}} đ</div>  
+                        <div class="product-discount text-center" [class.d-none]="p.discount==''?true:false">
+                            {{p.discount.toString() | number}} đ
                         </div>
                     </div>
                 </div>
