@@ -12,8 +12,12 @@ import { ProductsService } from 'src/app/service/products.service';
 export class DogComponent implements OnInit {
   products: any;
   errMsg: string = '';
+  productCategory: any;
   getType: any;
   p: boolean = false;
+  category: string = 'Chó';
+  quantity = 0;
+  
   constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, private cartService : CartService
     ) { }
 
@@ -33,13 +37,22 @@ export class DogComponent implements OnInit {
     //     }
     //   }
     // )
-    
+    // plus()
+    // {
+    //  this.quantity = this.quantity+1;
+    // }
+    // minus()
+    // {
+    //   if(this.quantity != 0)
+    // {
+    //  this.quantity = this.quantity-1;
+    // }
     
    
   }
   
 
-  
+ 
 
   getProductsDogs() {
     this._service.getProductsDogs().subscribe(
@@ -48,17 +61,36 @@ export class DogComponent implements OnInit {
         error: (err) => this.errMsg = err.message
       })
 
-
-
   }
+
+  
+
   checkDog(products: any[]): any[] {
     return products.filter(p => p.category.substring(0,1) === 'd');
   }
   
   navigateType(type: string):void {
  
-   
     this._router.navigateByUrl(`/dog?type=${type}`);
+    if(type === 'd_fo'){
+      this.category = "Thức ăn"
+    }
+    if(type === 'd_cl'){
+      this.category = "Quần áo"
+    }
+    if (type === 'd_co'){
+      this.category="Vòng cổ, dây dắt, rọ mõm"
+    }
+    if (type === 'd_co'){
+      this.category="Dụng cụ ăn uống"
+    }
+    if (type === 'd_be'){
+      this.category="Mỹ phẩm, dụng cụ làm đẹp"
+    }
+    if (type === 'd_ca'){
+      this.category="Chuồng, giường, nhà, túi"
+    }
+
     this.loadProducts()
   
   }
@@ -91,6 +123,8 @@ export class DogComponent implements OnInit {
   }
   
 
- 
 
+
+  
 }
+

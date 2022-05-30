@@ -11,10 +11,10 @@ import { CatProductsService } from '../../service/catProducts.service';
 export class CatComponent implements OnInit {
   products: any;
   errMsg: string = '';
-  gachChan: string = "";
   getType: any;
   p: boolean = false;
-  constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
+  category: string = 'Mèo';
+  constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, 
      ) { }
 
   ngOnInit(): void {
@@ -33,11 +33,12 @@ export class CatComponent implements OnInit {
     //     }
     //   }
     // )
-  
+
    
   }
   
-  
+
+
 
   getProducts() {
     this._service.getProducts().subscribe(
@@ -56,8 +57,41 @@ export class CatComponent implements OnInit {
   
   navigateType(type: string):void {
     this._router.navigateByUrl(`/cat?type=${type}`);
+
+
+
+    if(type === 'c_fo'){
+      this.category = "Thức ăn"
+    }
+    if(type === 'c_cl'){
+      this.category = "Quần áo"
+    }
+    if (type === 'c_co'){
+      this.category="Vòng cổ, dây dắt, rọ mõm"
+    }
+    if (type === 'c_co'){
+      this.category="Dụng cụ ăn uống"
+    }
+    if (type === 'c_be'){
+      this.category="Mỹ phẩm, dụng cụ làm đẹp"
+    }
+    if (type === 'c_ca'){
+      this.category="Chuồng, giường, nhà, túi"
+    }
+    if (type === 'c_sa'){
+      this.category="Cát vệ sinh"
+    }
+
+
     this.loadProducts()
   }
+
+  // headline(type: string):void {
+  //   this._router.navigateByUrl(`/cat?type=${type}`);
+  //   if (type == 'c_fo'){
+  //     this.title == 'thức ăn'
+  //   }
+  // }
 
   loadProducts(){
     this._activatedRoute.queryParams.subscribe((params: Params) => {

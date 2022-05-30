@@ -32,11 +32,12 @@
     <!-- [style.visibility]="checkDog2(p.category)" -->
         <!-- <div style="display: none !important;" class="products d-flex justify-content-center col-xl-4 col-md-6">s</div> -->
     <div class="row">
-        <div class="headline" id="title-pro" *ngFor></div>
-        
+        <div class="headline">
+            {{category}}
+        </div>
         <div routerLink="/products/{{p._id}}" class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of checkDog(products)">
             <div class="product w-100">
-                <div class="productitem">
+                <div class="product-item">
                     <div class="product-top text-center">
                         <img src="../../../assets/{{p.image[0]}}" alt="Error">
                     </div>

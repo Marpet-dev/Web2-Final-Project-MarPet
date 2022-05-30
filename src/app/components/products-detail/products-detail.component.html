@@ -5,13 +5,25 @@
 
                 <div class="products_gallery-left">
                     <div class="products_gallery-slider">
-                        <div style="text-align:center" class="dot_container">
-                            <span *ngFor="let i of product.image" class="dot" onclick="showImg()">
+                        <!-- <div style="text-align:center" class="dot_container"> -->
+                            <!-- <span *ngFor="let i of product.image" class="dot" onclick="showImg()">
                                 <img src="../../../assets/{{i}}" alt="">
-                            </span>
-                        </div>
+                            </span> -->
+                            <ngx-slick-carousel class="ul-box carousel" 
+                #slickModal="slick-carousel" 
+                [config]="slideConfig2" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <span ngxSlickItem *ngFor="let i of product.image" class="dot" onclick="showImg()">
+                            <img src="../../../assets/{{i}}" id="pic{{i}}" alt="">
+                    </span>
+                </ngx-slick-carousel>
+                        <!-- </div> -->
                         <div class="products_detail-img" id="products_detail-img">
                             <img src="../../../assets/{{product.image[0]}}" alt="">
+                            <!-- <img src="../../../assets/{{bigImage}}" alt=""> -->
                         </div>
                     </div>
                 </div>
@@ -31,14 +43,15 @@
                                 <label>Giá bán:</label>
                                 <span class="price-amount">
                                     <span class="price"
-                                        [class.text-decoration-line-through]="product.discount==''?false:true">{{product.price[0] | number}}</span>
+                                        [class.text-decoration-line-through]="product.discount==''?false:true">{{product.price[0]
+                                        | number}} đ</span>
                                     <span style="font-weight: 700;"></span>
                                 </span>
                             </div>
                             <div class="price-discount" [class.d-none]="product.discount==''?true:false">
                                 <label>Giá khuyến mãi:</label>
                                 <span class="price-amount">
-                                    <span class="price">{{product.discount.toString() | number }}</span>
+                                    <span class="price">{{product.discount}}</span>
                                     <span style="color: #b93505; font-weight: 700;"></span>
                                 </span>
                             </div>
@@ -55,7 +68,7 @@
                             <div class="weight-option">
 
                                 <button *ngFor="let w of product.weight; index as i">
-                                    <span >{{w}} - {{product.price[i] | number}}</span> đ  
+                                    <span>{{w}} - {{product.price[i] | number}}</span> đ
                                 </button>
 
                             </div>
@@ -67,7 +80,8 @@
                             </div>
                             <div class="color-option">
                                 <div class="btn_color">
-                                    <button *ngFor="let c of product.colors" class="btn_color-select" [style.background-color]="c"></button>
+                                    <button *ngFor="let c of product.colors" class="btn_color-select"
+                                        [style.background-color]="c"></button>
                                 </div>
                             </div>
                         </div>
@@ -78,8 +92,13 @@
                                         <label for="quantity">Số lượng</label>
                                         <fieldset data-quantity>
                                             <legend>Change quantity</legend>
+                                            <button type="button" title="Down" (click)="minus()" class="sub">Down</button>
+                                            <input type="number" name="quantity" class="form-control" [(ngModel)]="quantity">    
+                                            <button type="button" title="Up" class="add" (click)="plus()">Up</button>
                                         </fieldset>
-                                        <button type="submit" name="add-to-cart" class="btn_add-to-cart" (click)=addtocart(product)>Thêm vào
+
+                                        <button type="submit" name="add-to-cart" class="btn_add-to-cart"
+                                            (click)=addtocart(product)>Thêm vào
                                             giỏ hàng</button>
                                     </div>
                                 </div>
