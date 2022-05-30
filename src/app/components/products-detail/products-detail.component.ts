@@ -13,6 +13,7 @@ export class ProductsDetailComponent implements OnInit {
   bigImage:any;
   errMsg: string = '';
   getId: string = '';
+  quantity: number = 0;
   slides = [
     { img: 'https://via.placeholder.com/600.png/09f/fff' },
     { img: 'https://via.placeholder.com/600.png/021/fff' },
@@ -103,4 +104,16 @@ export class ProductsDetailComponent implements OnInit {
   showImg(itemx:any){
     this.bigImage=itemx;
   }
+
+  plus()
+  {
+   this.quantity = this.quantity+1;
+  }
+  minus()
+  {
+    if(this.quantity != 0)
+  {
+   this.quantity = this.quantity-1;
+  }
+}
 }
