@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/service/products.service';
 })
 export class ProductsDetailComponent implements OnInit {
   product: any;
+  bigImage:any;
   errMsg: string = '';
   getId: string = '';
   slides = [
@@ -22,9 +23,9 @@ export class ProductsDetailComponent implements OnInit {
   slideConfig2 = { 
     slidesToShow: 2,
     slidesToScroll: 1,
-    // // dots: true,
-    // autoplay: true,
-    autoplaySpeed: 2000,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
@@ -52,7 +53,7 @@ export class ProductsDetailComponent implements OnInit {
         },
       },
     ],
-    arrows:true, // 2 cái nút previous và next!
+    arrows:false, // 2 cái nút previous và next!
     vertical:true,
    };
    addSlide() {
@@ -98,5 +99,8 @@ export class ProductsDetailComponent implements OnInit {
   }
   addtocart(item: any){
     this.cartService.addtoCart(item);
+  }
+  showImg(itemx:any){
+    this.bigImage=itemx;
   }
 }
