@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 import { ProductsService } from 'src/app/service/products.service';
 // import { DogProductsService } from '../../service/dogProducts.service';
 
@@ -11,9 +12,10 @@ import { ProductsService } from 'src/app/service/products.service';
 export class DogComponent implements OnInit {
   products: any;
   errMsg: string = '';
+  productCategory: any;
   getType: any;
   p: boolean = false;
-  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute,
+  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, private cartService : CartService
     ) { }
 
   ngOnInit(): void {
@@ -47,26 +49,21 @@ export class DogComponent implements OnInit {
         error: (err) => this.errMsg = err.message
       })
 
-
-
   }
-  checkDog(c: string) {
-    this.p = c.substring(0, 1) == "d" ? true : false;
-    if(this.p==true){
-      return "";
-    }
-    else{
-      return "none !important";
-    }
+
+  
+
+  checkDog(products: any[]): any[] {
+    return products.filter(p => p.category.substring(0,1) === 'd');
   }
   
   navigateType(type: string):void {
  
-   
     this._router.navigateByUrl(`/dog?type=${type}`);
     this.loadProducts()
   
   }
+
 
 
   
@@ -90,7 +87,10 @@ export class DogComponent implements OnInit {
     
   }
 
- 
+  addtocart(item: any){
+    this.cartService.addtoCart(item);
+  }
+  
 
  
 

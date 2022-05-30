@@ -1,5 +1,5 @@
 [{
-        "newid": "1",
+        "id": 5,
         "title": "Chữa bệnh viêm da cho chó mèo tại nhà",
         "image": "../../../assets/library/chuaviemdatainha.jpg",
         "subtitles": [{
@@ -21,7 +21,7 @@
         ]
     },
     {
-        "newid": "1",
+        "id": 6,
         "title": "Cún mang bầu nên có chế độ dinh dưỡng như thế nào?",
         "image": "../../../assets/library/cunmangbau.jpg",
         "subtitles": [{
@@ -43,7 +43,7 @@
         ]
     },
     {
-        "newid": "1",
+        "id": 7,
         "title": "Cách tắm cho mèo mang thai an toàn tại nhà",
         "image": "../../../assets/library/tameoantoan.jpg",
         "subtitles": [{

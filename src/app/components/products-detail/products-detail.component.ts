@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 import { ProductsService } from 'src/app/service/products.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class ProductsDetailComponent implements OnInit {
   product: any;
   errMsg: string = '';
   getId: string = '';
+<<<<<<< HEAD
   slides = [
     { img: 'https://via.placeholder.com/600.png/09f/fff' },
     { img: 'https://via.placeholder.com/600.png/021/fff' },
@@ -73,6 +75,9 @@ export class ProductsDetailComponent implements OnInit {
     console.log('beforeChange');
   }
   constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute) { }
+=======
+  constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService) { }
+>>>>>>> 54aa24782d9607eeac337c3cba7bf652f67410c4
 
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe(
@@ -94,5 +99,8 @@ export class ProductsDetailComponent implements OnInit {
 
 
 
+  }
+  addtocart(item: any){
+    this.cartService.addtoCart(item);
   }
 }

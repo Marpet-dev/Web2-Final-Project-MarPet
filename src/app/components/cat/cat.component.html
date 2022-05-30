@@ -4,7 +4,6 @@
             <h2>Danh mục</h2>
             <ul class="category-list">
                 <li class="category-item category-item--active">
-                 
                     <a (click)="navigateType('c_fo')">Thức ăn</a> 
                 </li>
                 <li class="category-item category-item--active">
@@ -28,24 +27,23 @@
             </ul>
         </div>
     </div>
-
     <div class="row">
-        <div class="products d-flex justify-content-center col-xl-4 col-md-6"  *ngFor="let p of products">
-            <div class="product w-100" [style.display]="checkCat(p.category)">
-                <div class="productitem">
+        <div class="headline">{{title}}</div>
+        <div routerLink="/products/{{p._id}}" *ngFor="let p of checkCat(products)" class="products d-flex justify-content-center col-xl-4 col-md-6">
+            <div class="product w-100">
+                <div class="product-item">
                     <div class="product-top text-center">
                         <img src="../../../assets/{{p.image[0]}}" alt="Error">
                     </div>
                     <div class="product-info">
                         <div class="product-label text-center">{{p.label}}</div><br>
                         <div class="product-name text-center">{{p.name}}</div><br>
-                        <div class="product-price text-center">{{p.price[0]}}</div>  
-                        <div class="product-discount text-center">
-                            {{p.discount}}
+                        <div class="product-price text-center" [class.text-decoration-line-through]="p.discount==''?false:true">{{p.price[0] | number}} đ</div>  
+                        <div class="product-discount text-center" [class.d-none]="p.discount==''?true:false">
+                            {{p.discount.toString() | number}} đ
                         </div>
                     </div>
                 </div>
             </div>
-           
         </div>
     </div>
