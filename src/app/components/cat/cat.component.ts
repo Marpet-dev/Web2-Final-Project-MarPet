@@ -61,7 +61,7 @@ export class CatComponent implements OnInit {
 
 
     if(type === 'c_fo'){
-      this.category = "Thức ăn"
+      this.category = "Thức ăn cho mèo"
     }
     if(type === 'c_cl'){
       this.category = "Quần áo"

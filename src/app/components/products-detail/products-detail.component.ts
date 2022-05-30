@@ -10,7 +10,7 @@ import { ProductsService } from 'src/app/service/products.service';
 })
 export class ProductsDetailComponent implements OnInit {
   product: any;
-  bigImage:any;
+  bigImage: any = 0;
   errMsg: string = '';
   getId: string = '';
   quantity: number = 0;
@@ -87,6 +87,11 @@ export class ProductsDetailComponent implements OnInit {
       }
     )
     this.getProduct(this.getId)
+
+    
+
+
+    
   }
   getProduct(id: any) {
     this._service.getProductsById(id).subscribe(
@@ -94,15 +99,15 @@ export class ProductsDetailComponent implements OnInit {
         next: (data) => this.product = data,
         error: (err) => this.errMsg = err.message
       })
-
+      
 
 
   }
   addtocart(item: any){
     this.cartService.addtoCart(item);
   }
-  showImg(itemx:any){
-    this.bigImage=itemx;
+  showImg(i: any){
+    this.bigImage= i;
   }
 
   plus()

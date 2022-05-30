@@ -16,14 +16,14 @@
                 (breakpoint)="breakpoint($event)"
                 (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
-                    <span ngxSlickItem *ngFor="let i of product.image" class="dot" onclick="showImg()">
-                            <img src="../../../assets/{{i}}" id="pic{{i}}" alt="">
+                    <span ngxSlickItem *ngFor="let i of product.image; index as index" class="dot" (click)="showImg(index)">
+                            <img src="../../../assets/{{i}}" alt="" >
                     </span>
                 </ngx-slick-carousel>
                         <!-- </div> -->
                         <div class="products_detail-img" id="products_detail-img">
-                            <img src="../../../assets/{{product.image[0]}}" alt="">
-                            <!-- <img src="../../../assets/{{bigImage}}" alt=""> -->
+                            <!-- <img src="../../../assets/{{product.image[0]}}" alt=""> -->
+                            <img src="../../../assets/{{product.image[bigImage]}}" alt="">
                         </div>
                     </div>
                 </div>
