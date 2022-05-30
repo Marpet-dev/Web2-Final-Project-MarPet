@@ -49,6 +49,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductsDetailComponent } from './components/products-detail/products-detail.component';
 
+import { FilterPipe } from './shared/filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +64,7 @@ import { ProductsDetailComponent } from './components/products-detail/products-d
     SignInComponent,
     SignUpComponent,
     PolicyComponent,
+    FilterPipe,
 RoutingComponents,
 AboutComponent,
 ServiceAndSupportComponent,
@@ -71,6 +74,8 @@ ShoppingCartComponent,
 PagenotfoundComponent,
 FavoriteComponent,
 ProductsDetailComponent,
+FilterPipe,
+
 
     
   ],
@@ -101,6 +106,7 @@ ProductsDetailComponent,
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+
     BrowserAnimationsModule,   
     ToastrModule.forRoot({
       timeOut: 3000,

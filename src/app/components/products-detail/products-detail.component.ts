@@ -126,8 +126,8 @@ export class ProductsDetailComponent implements OnInit {
   minus()
   {
     if(this.quantity > 1)
-    {
-      this.quantity = this.quantity-1;
-    }
+  {
+   this.quantity = this.quantity-1;
+  }
 }
 }

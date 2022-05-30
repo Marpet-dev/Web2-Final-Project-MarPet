@@ -15,6 +15,7 @@ export class DogComponent implements OnInit {
   productCategory: any;
   getType: any;
   p: boolean = false;
+  searchKey:string = '';
   category: string = 'Chó';
   quantity = 0;
   
@@ -37,16 +38,10 @@ export class DogComponent implements OnInit {
     //     }
     //   }
     // )
-    // plus()
-    // {
-    //  this.quantity = this.quantity+1;
-    // }
-    // minus()
-    // {
-    //   if(this.quantity != 0)
-    // {
-    //  this.quantity = this.quantity-1;
-    // }
+
+    this.cartService.search.subscribe((val:any)=>{
+      this.searchKey = val;
+    })
     
    
   }
