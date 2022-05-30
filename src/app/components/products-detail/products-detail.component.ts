@@ -16,7 +16,7 @@ export class ProductsDetailComponent implements OnInit {
   getId: string = '';
   public productList : any;
   constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService,private api : ApiService) { }
-  quantity: number = 0;
+  quantity: number = 1;
   slides = [
     { img: 'https://via.placeholder.com/600.png/09f/fff' },
     { img: 'https://via.placeholder.com/600.png/021/fff' },
@@ -125,9 +125,9 @@ export class ProductsDetailComponent implements OnInit {
   }
   minus()
   {
-    if(this.quantity != 0)
-  {
-   this.quantity = this.quantity-1;
-  }
+    if(this.quantity > 1)
+    {
+      this.quantity = this.quantity-1;
+    }
 }
 }
