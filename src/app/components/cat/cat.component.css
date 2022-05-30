@@ -41,6 +41,7 @@ body{
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .category-item {
     margin: 3px;

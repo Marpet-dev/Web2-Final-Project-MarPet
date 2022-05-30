@@ -35,6 +35,7 @@ body{
 .category-list{
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .category-list li{
     list-style: none;

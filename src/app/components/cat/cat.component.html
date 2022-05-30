@@ -24,11 +24,16 @@
                 <li class="category-item category-item--active">
                     <a (click)="navigateType('c_toy')">Đồ chơi, phụ kiện huấn luyện</a>
                 </li>
+                <li class="category-item category-item--active">
+                    <a (click)="navigateType('c_sa')">Cát vệ sinh</a>
+                </li>
             </ul>
         </div>
     </div>
     <div class="row">
-        <div class="headline">{{title}}</div>
+        <div class="headline">
+            {{category}}
+        </div>
         <div routerLink="/products/{{p._id}}" *ngFor="let p of checkCat(products)" class="products d-flex justify-content-center col-xl-4 col-md-6">
             <div class="product w-100">
                 <div class="product-item">

@@ -13,7 +13,7 @@ export class CatComponent implements OnInit {
   errMsg: string = '';
   getType: any;
   p: boolean = false;
-  title: any;
+  category: string = 'Mèo';
   constructor(private _service: ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, 
      ) { }
 
@@ -33,12 +33,9 @@ export class CatComponent implements OnInit {
     //     }
     //   }
     // )
-    if (this.products.category == 'c_fo'){
-      this.title == 'thức ăn';
-    }
+
    
   }
-  
   
 
 
@@ -60,6 +57,32 @@ export class CatComponent implements OnInit {
   
   navigateType(type: string):void {
     this._router.navigateByUrl(`/cat?type=${type}`);
+
+
+
+    if(type === 'c_fo'){
+      this.category = "Thức ăn"
+    }
+    if(type === 'c_cl'){
+      this.category = "Quần áo"
+    }
+    if (type === 'c_co'){
+      this.category="Vòng cổ, dây dắt, rọ mõm"
+    }
+    if (type === 'c_co'){
+      this.category="Dụng cụ ăn uống"
+    }
+    if (type === 'c_be'){
+      this.category="Mỹ phẩm, dụng cụ làm đẹp"
+    }
+    if (type === 'c_ca'){
+      this.category="Chuồng, giường, nhà, túi"
+    }
+    if (type === 'c_sa'){
+      this.category="Cát vệ sinh"
+    }
+
+
     this.loadProducts()
   }
 

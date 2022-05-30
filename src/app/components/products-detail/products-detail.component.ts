@@ -12,6 +12,7 @@ export class ProductsDetailComponent implements OnInit {
   product: any;
   errMsg: string = '';
   getId: string = '';
+  quantity: number = 0;
   constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService) { }
 
   ngOnInit(): void {
@@ -38,4 +39,16 @@ export class ProductsDetailComponent implements OnInit {
   addtocart(item: any){
     this.cartService.addtoCart(item);
   }
+
+  plus()
+  {
+   this.quantity = this.quantity+1;
+  }
+  minus()
+  {
+    if(this.quantity != 0)
+  {
+   this.quantity = this.quantity-1;
+  }
+}
 }
