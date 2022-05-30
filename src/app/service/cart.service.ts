@@ -5,16 +5,15 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
+
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
-  constructor() {
-    
-   }
-   getProducts(){
+
+  constructor() { }
+  getProducts(){
     return this.productList.asObservable();
   }
-
   setProduct(product : any){
     this.cartItemList.push(...product);
     this.productList.next(product);
@@ -44,4 +43,5 @@ export class CartService {
     this.cartItemList = []
     this.productList.next(this.cartItemList);
   }
+  
 }

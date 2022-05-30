@@ -13,23 +13,24 @@ export class ShoppingCartComponent implements OnInit {
   message:any;
   public products : any = [];
   public grandTotal !: number;
+  public sone : number = 0;
   constructor(private stageColorService: SendavatarService, private cartService: CartService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.cartService.getProducts()
+    .subscribe(res=>{
+      this.sone = res.length;
+    })
+    this.message=this.stageColorService.getMessage();
     this.cartService.getProducts()
     .subscribe(res=>{
       this.products = res;
       this.grandTotal = this.cartService.getTotalPrice();
     })
-
-    // this.stageColorService.stage$
-    // .subscribe(
-    //   image => {
-    //     // console.log('image subscription'+ image);
-    //       this.imgSrc = document.getElementById("avatarString")
-    //     });
-    this.message=this.stageColorService.getMessage()
-}
+    console.log(this.sone);
+    console.log(this.products);
+  }
+  
 removeItem(item: any){
   this.cartService.removeCartItem(item);
 }
