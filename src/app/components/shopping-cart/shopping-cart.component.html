@@ -7,155 +7,88 @@
           <div class="card-header py-3">
             <h5 class="mb-0">Giỏ hàng - 2 sản phẩm</h5>
           </div>
-          <div *ngFor="let p of products">
-            <p>{{p.productid}}</p>
-            <p>{{p.label}}</p>
-          </div>
-          <div class="card-body" >
-            <!-- Single item -->
-            <div class="row">
-              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                <!-- Image -->
-                <div class="bg-image hover-overlay hover-zoom ripple rounded"
-                  data-mdb-ripple-color="light">
-                  <img src="../../../assets/library/products/dog/DG_FO_sp10.jpg"
-                    class="w-100" alt="Blue Jeans Jacket" />
-                  <a href="/dog">
-                    <div class="mask" style="background-color: rgba(251, 251,
-                      251, 0.2)"></div>
-                  </a>
+          <ng-container *ngIf="true">
+            <div class="card-body" *ngFor="let item of products, let i = index">
+              <!-- Single item -->
+              <div class="row">
+                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                  <!-- Image -->
+                  <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                    data-mdb-ripple-color="light">
+                    <img src="{{item.image}}"
+                      class="w-100" alt="{{item.name}}" />
+                    <a href="/dog">
+                      <div class="mask" style="background-color: rgba(251, 251,
+                        251, 0.2)"></div>
+                    </a>
+                  </div>
+                  <!-- Image -->
                 </div>
-                <!-- Image -->
-              </div>
-
-              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                <!-- Data -->
-                <p><strong>Thức ăn cho chó con hạt mềm ZENITH Puppy Chicken
-                    Potato</strong></p>
-                  
-                <!-- <p>Color: blue</p> -->
-                <p>Khối lượng: 1kg</p>
-                <button type="button" class="btn btn-light btn-sm me-1 mb-2"
-                  data-mdb-toggle="tooltip"
-                  title="Remove item">
-                  <i class="fas fa-trash"></i>
-                </button>
-                <button type="button" class="btn btn-danger btn-sm mb-2"
-                  data-mdb-toggle="tooltip"
-                  title="Move to the wish list">
-                  <i class="fas fa-heart"></i>
-                </button>
-                <!-- Data -->
-              </div>
-
-              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <!-- Quantity -->
-                <!-- <p style="text-align: center !important;">Số lượng</p> -->
-                <!-- <p>Số lượng</p> -->
-
-                <div class="d-flex mb-4" style="max-width: 300px">
-                  <button class="btn btn-dark px-3 me-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="fas fa-minus"></i>
+  
+                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                  <!-- Data -->
+                  <p><strong>{{item.name}}</strong></p>
+                    
+                  <!-- <p>Color: blue</p> -->
+                  <p >{{item.weight}}</p>
+                  <button (click)="removeProduct(item)" type="button" class="btn btn-light btn-sm me-1 mb-2"
+                    data-mdb-toggle="tooltip"
+                    title="Remove item">
+                    <i class="fas fa-trash"></i>
                   </button>
-
-                  <!-- <div class="form-outline">
-                      <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                      <label class="form-label" for="form1">Quantity</label>
-                    </div> -->
-                  <label class="input">
-                    <input style="text-align: center !important;"
-                      class="input__field" id="form1" min="0" name="quantity"
-                      value="1" type="number" />
-                    <span class="input__label">Số lượng</span>
-                  </label>
-                  <button class="btn btn-dark px-3 ms-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fas fa-plus"></i>
+                  <button type="button" class="btn btn-danger btn-sm mb-2"
+                    data-mdb-toggle="tooltip"
+                    title="Move to the wish list">
+                    <i class="fas fa-heart"></i>
                   </button>
+                  <!-- Data -->
                 </div>
-                <!-- Quantity -->
-
-                <!-- Price -->
-                <p class="text-start text-md-center">
-                  <strong>500.000 VNĐ</strong>
-                </p>
-                <!-- Price -->
+  
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                  <!-- Quantity -->
+                  <!-- <p style="text-align: center !important;">Số lượng</p> -->
+                  <!-- <p>Số lượng</p> -->
+  
+                  <div class="d-flex mb-4" style="max-width: 300px">
+                    <button class="btn btn-dark px-3 me-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+  
+                    <!-- <div class="form-outline">
+                        <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                        <label class="form-label" for="form1">Quantity</label>
+                      </div> -->
+                    <label class="input">
+                      <input style="text-align: center !important;"
+                        class="input__field" id="form1" min="0" name="quantity"
+                        value="1" type="number" />
+                      <span class="input__label">Số lượng</span>
+                    </label>
+                    <button class="btn btn-dark px-3 ms-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <!-- Quantity -->
+  
+                  <!-- Price -->
+                  <p class="text-start text-md-center">
+                    <strong>500.000 VNĐ</strong>
+                  </p>
+                  <!-- Price -->
+                </div>
               </div>
+              <!-- Single item -->
+  
+              <hr class="my-4" />
+  
             </div>
-            <!-- Single item -->
-
-            <hr class="my-4" />
-
-            <!-- Single item -->
-            <div class="row">
-              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                <!-- Image -->
-                <div class="bg-image hover-overlay hover-zoom ripple rounded"
-                  data-mdb-ripple-color="light">
-                  <img src="../../../assets/library/products/dog/DG_FO_sp1.jpg"
-                    class="w-100" />
-                  <a href="/dog">
-                    <div class="mask" style="background-color: rgba(251, 251,
-                      251, 0.2)"></div>
-                  </a>
-                </div>
-                <!-- Image -->
-              </div>
-
-              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                <!-- Data -->
-                <p><strong>Thức ăn cho chó con cỡ nhỏ ROYAL CANIN Mini Puppy</strong></p>
-                <!-- <p>Color: red</p> -->
-                <p>Khối lượng: 2kg</p>
-
-                <button type="button" class="btn btn-light btn-sm me-1 mb-2"
-                  data-mdb-toggle="tooltip"
-                  title="Remove item">
-                  <i class="fas fa-trash"></i>
-                </button>
-                <button type="button" class="btn btn-danger btn-sm mb-2"
-                  data-mdb-toggle="tooltip"
-                  title="Move to the wish list">
-                  <i class="fas fa-heart"></i>
-                </button>
-                <!-- Data -->
-              </div>
-
-              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <!-- Quantity -->
-                <div class="d-flex mb-4" style="max-width: 300px">
-                  <button class="btn btn-dark px-3 me-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="fas fa-minus"></i>
-                  </button>
-
-                  <!-- <div class="form-outline">
-                      <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                      <label class="form-label" for="form1">Quantity</label>
-                    </div> -->
-                  <label class="input">
-                    <input style="text-align: center !important;"
-                      class="input__field" id="form1" min="0" name="quantity"
-                      value="1" type="number" />
-                    <span class="input__label">Số lượng</span>
-                  </label>
-                  <button class="btn btn-dark px-3 ms-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-                <!-- Quantity -->
-
-                <!-- Price -->
-                <p class="text-start text-md-center">
-                  <strong>500.000 VNĐ</strong>
-                </p>
-                <!-- Price -->
-              </div>
-            </div>
-            <!-- Single item -->
-          </div>
+          </ng-container>
+          <ng-container *ngIf="false">
+            <p>et o et</p>
+          </ng-container>
+          
         </div>
         <div class="card mb-4">
           <div class="card-body">

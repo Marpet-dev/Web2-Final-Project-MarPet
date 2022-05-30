@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   // message:any;
   // message=document.getElementById("avatarString")?.innerText;
   ngOnInit(){
-    this.cartService.getProducts()
+    this.cartService.getProductData()
     .subscribe(res=>{
       this.totalItem = res.length;
     })
@@ -48,9 +48,9 @@ export class HeaderComponent implements OnInit {
   //   this.stageColorService.sendStage(canv.toDataURL()); // use service to send image to color component
   // };
 
-  search(event:any){
-    this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
-    this.cartService.search.next(this.searchTerm);
-  }
+  // search(event:any){
+  //  this.searchTerm = (event.target as HTMLInputElement).value;
+  // console.log(this.searchTerm);
+  // this.cartService.search.next(this.searchTerm);
+  // }
 }

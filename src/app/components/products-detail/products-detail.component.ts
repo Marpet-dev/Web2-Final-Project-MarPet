@@ -14,7 +14,7 @@ export class ProductsDetailComponent implements OnInit {
   bigImage: any = 0;
   errMsg: string = '';
   getId: string = '';
-  public productList : any;
+  productList : any;
   constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService,private api : ApiService) { }
   quantity: number = 1;
   slides = [
@@ -80,7 +80,7 @@ export class ProductsDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getProducts()
+    this.api.getProduct()
     .subscribe(res=>{
       this.productList = res;
       this.productList.forEach((a:any) => {
@@ -111,8 +111,8 @@ export class ProductsDetailComponent implements OnInit {
       })
 
   }
-  addtocart(item: any){
-    this.cartService.addtoCart(item);
+  addtoCart(item: any){
+    this.cartService.addToCart(item);
     
   }
   showImg(i: any){

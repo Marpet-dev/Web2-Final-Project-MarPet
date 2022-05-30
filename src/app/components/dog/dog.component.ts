@@ -19,7 +19,7 @@ export class DogComponent implements OnInit {
   category: string = 'Chó';
   quantity = 0;
   
-  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, private cartService : CartService
+  constructor(private _service:ProductsService, private _router: Router, private _activatedRoute: ActivatedRoute, 
     ) { }
 
   ngOnInit(): void {
@@ -39,9 +39,6 @@ export class DogComponent implements OnInit {
     //   }
     // )
 
-    this.cartService.search.subscribe((val:any)=>{
-      this.searchKey = val;
-    })
     
    
   }
@@ -113,9 +110,6 @@ export class DogComponent implements OnInit {
     
   }
 
-  addtocart(item: any){
-    this.cartService.addtoCart(item);
-  }
   
 
 
