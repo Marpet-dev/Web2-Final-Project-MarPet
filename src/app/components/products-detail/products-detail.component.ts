@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { ProductsService } from 'src/app/service/products.service';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-products-detail',
@@ -13,6 +14,8 @@ export class ProductsDetailComponent implements OnInit {
   bigImage: any = 0;
   errMsg: string = '';
   getId: string = '';
+  public productList : any;
+  constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService,private api : ApiService) { }
   quantity: number = 0;
   slides = [
     { img: 'https://via.placeholder.com/600.png/09f/fff' },
@@ -75,9 +78,16 @@ export class ProductsDetailComponent implements OnInit {
   beforeChange(e: any) {
     console.log('beforeChange');
   }
-  constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService) { }
 
   ngOnInit(): void {
+    this.api.getProducts()
+    .subscribe(res=>{
+      this.productList = res;
+      this.productList.forEach((a:any) => {
+        Object.assign(a,{quantity:1,total:a.price});
+      });
+      // console.log(this.productList)
+    });
     this._activatedRoute.paramMap.subscribe(
       (param) => {
         let id = param.get('id');
@@ -99,12 +109,11 @@ export class ProductsDetailComponent implements OnInit {
         next: (data) => this.product = data,
         error: (err) => this.errMsg = err.message
       })
-      
-
 
   }
   addtocart(item: any){
     this.cartService.addtoCart(item);
+    
   }
   showImg(i: any){
     this.bigImage= i;
