@@ -15,7 +15,7 @@
                   <!-- Image -->
                   <div class="bg-image hover-overlay hover-zoom ripple rounded"
                     data-mdb-ripple-color="light">
-                    <img src="{{item.image}}"
+                    <img src="../../../assets/{{item.image[0]}}"
                       class="w-100" alt="{{item.name}}" />
                     <a href="/dog">
                       <div class="mask" style="background-color: rgba(251, 251,
@@ -50,10 +50,7 @@
                   <!-- <p>Số lượng</p> -->
   
                   <div class="d-flex mb-4" style="max-width: 300px">
-                    <button class="btn btn-dark px-3 me-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                      <i class="fas fa-minus"></i>
-                    </button>
+                    
   
                     <!-- <div class="form-outline">
                         <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
@@ -62,13 +59,9 @@
                     <label class="input">
                       <input style="text-align: center !important;"
                         class="input__field" id="form1" min="0" name="quantity"
-                        value="1" type="number" />
+                        value="1" type="text" readonly />
                       <span class="input__label">Số lượng</span>
                     </label>
-                    <button class="btn btn-dark px-3 ms-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                      <i class="fas fa-plus"></i>
-                    </button>
                   </div>
                   <!-- Quantity -->
   
