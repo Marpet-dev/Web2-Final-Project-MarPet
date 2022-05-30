@@ -56,9 +56,8 @@
           </li> -->
         </ul>
         <form class="d-flex searchBarCSS">
-          <!-- <input class="form-control me-2" type="search" placeholder="Nhập để tìm kiếm" aria-label="Search"> -->
-          <input class="form-control me-2" type="search" placeholder="Nhập để tìm kiếm" aria-label="Search">
-          <!-- <input style="width:65%;" class="form-control me-2" type="search" placeholder="Nhập để tìm kiếm" aria-label="Search"> -->
+          
+          <input class="form-control me-2" type="search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Nhập để tìm kiếm" aria-label="Search">
           <button class="btn btn-outline-warning" type="submit">Tìm</button>
           <!-- <button style="width: 1px;" class="btn btn-outline-warning" type="submit">Tìm</button> -->
         </form>

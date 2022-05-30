@@ -10,7 +10,9 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class HeaderComponent implements OnInit {
   public totalItem : number = 0;
+  public searchTerm: string = '';
   avatarRandom: any;
+  
   // message: any;
   message="https://images.dog.ceo/breeds/springer-english/n02102040_1266.jpg";
   constructor(private scroll: ViewportScroller, private _service: AvatarService, private stageColorService: SendavatarService, private cartService : CartService) { }
@@ -45,4 +47,10 @@ export class HeaderComponent implements OnInit {
   //   const canv = document.getElementById('avatarCustomer') as HTMLCanvasElement;
   //   this.stageColorService.sendStage(canv.toDataURL()); // use service to send image to color component
   // };
+
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService.search.next(this.searchTerm);
+  }
 }
