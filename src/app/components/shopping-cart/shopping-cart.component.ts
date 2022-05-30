@@ -11,30 +11,26 @@ export class ShoppingCartComponent implements OnInit {
   // public imgSrc:any;
   // constructor() { }
   message:any;
-  public products : any = [];
+  products : any = [];
+  allProducts:any=0;
   public grandTotal !: number;
   public sone : number = 0;
   constructor(private stageColorService: SendavatarService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts()
+    this.cartService.getProductData()
     .subscribe(res=>{
-      this.sone = res.length;
+      this.products=res;
+      this.allProducts=this.cartService.getTotalAmount();
     })
     this.message=this.stageColorService.getMessage();
-    this.cartService.getProducts()
-    .subscribe(res=>{
-      this.products = res;
-      this.grandTotal = this.cartService.getTotalPrice();
-    })
-    console.log(this.sone);
-    console.log(this.products);
+    
   }
   
-removeItem(item: any){
-  this.cartService.removeCartItem(item);
+removeProduct(item: any){
+  this.cartService.removeCartData(item);
 }
-emptycart(){
+removeAllProduct(){
   this.cartService.removeAllCart();
 }
 }

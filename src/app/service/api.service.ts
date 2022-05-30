@@ -8,8 +8,8 @@ export class ApiService {
 
   constructor(private http : HttpClient) { }
 
-  getProducts(){
-    return this.http.get<any>("http://localhost:3000/products")
+  getProduct(){
+    return this.http.get("http://localhost:3000/products")
     .pipe(map((res:any)=>{
       return res;
     }))

@@ -32,19 +32,19 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/home">Trang chủ</a>
+            <a class="nav-link" routerLink="home">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dog">Chó</a>
+            <a class="nav-link" routerLink="dog">Chó</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cat">Mèo</a>
+            <a class="nav-link" routerLink="cat">Mèo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pet-services">Dịch vụ</a>
+            <a class="nav-link" routerLink="pet-services">Dịch vụ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/news">Tin tức</a>
+            <a class="nav-link" routerLink="news">Tin tức</a>
           </li>
           <!-- <li class="nav-item headerItemResponsive">
             <a class="nav-link" href="/shopping-cart">Giỏ hàng </a>
@@ -57,7 +57,10 @@
         </ul>
         <form class="d-flex searchBarCSS">
           
-          <input class="form-control me-2" type="search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Nhập để tìm kiếm" aria-label="Search">
+          <input class="form-control me-2" 
+          type="search" 
+          [(ngModel)]="searchTerm"  
+          placeholder="Nhập để tìm kiếm" aria-label="Search">
           <button class="btn btn-outline-warning" type="submit">Tìm</button>
           <!-- <button style="width: 1px;" class="btn btn-outline-warning" type="submit">Tìm</button> -->
         </form>
@@ -79,7 +82,7 @@
         </div> -->
         
         <!-- Icon -->
-        <a class="text-reset me-3 headerItemResponsive2" href="/shopping-cart">
+        <a class="text-reset me-3 headerItemResponsive2" routerLink="shopping-cart" href="/shopping-cart">
           <i class="fas fa-shopping-cart"></i>
           <span class="badge rounded-pill badge-notification bg-danger">{{totalItem}}</span>
         </a>
