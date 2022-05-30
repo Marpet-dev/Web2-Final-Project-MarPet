@@ -29,7 +29,7 @@ export class RegisterService {
 
 
   postUser(data: User){
-    return this._http.post(`${baseUrl}/users/user`,data).pipe(
+    return this._http.post(`${baseUrl}/auth/register`,data).pipe(
       retry(2),
       catchError(this.handleError)
     )
