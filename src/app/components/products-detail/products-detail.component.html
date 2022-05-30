@@ -68,12 +68,12 @@
                             <div class="weight-choose">
                                 <div>
                                     <!-- <span>{{w}} - {{product.price[i] | number}}</span> đ -->
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault{{0}}" checked/>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault{{0}}" checked/>
                                     <label class="form-check-label" for="flexRadioDefault{{0}}"> <span>{{product.weight[0]}} - {{product.price[0] | number}} đ</span></label>
                                 </div>
                                 <div *ngFor="let w of product.weight.slice(1); index as i">
                                     <!-- <span>{{w}} - {{product.price[i] | number}}</span> đ -->
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault{{i+1}}"/>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault{{i+1}}"/>
                                         <label class="form-check-label" for="flexRadioDefault{{i+1}}"> <span>{{product.weight[i+1]}} - {{product.price[i+1] | number}} đ</span></label>
                                 </div>
 
@@ -93,13 +93,13 @@
                             <div class="color-choose">
                                 <div>
                                     <!-- <span>{{w}} - {{product.price[i] | number}}</span> đ -->
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault{{0}}" checked/>
-                                    <label class="form-check-label" for="flexRadioDefault{{0}}"><span [ngStyle]="{'background-color':product.colors[0]}"></span></label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefaultx" id="flexRadioDefaultx{{0}}" checked/>
+                                    <label class="form-check-label" for="flexRadioDefaultx{{0}}"><span [ngStyle]="{'background-color':product.colors[0]}"></span></label>
                                 </div>
                                 <div *ngFor="let c of product.colors.slice(1); index as i">
                                     <!-- <span>{{w}} - {{product.price[i] | number}}</span> đ -->
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault{{i+1}}"/>
-                                    <label class="form-check-label" for="flexRadioDefault{{i+1}}"><span [ngStyle]="{'background-color':product.colors[i+1]}"></span></label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefaultx" id="flexRadioDefaultx{{i+1}}"/>
+                                    <label class="form-check-label" for="flexRadioDefaultx{{i+1}}"><span [ngStyle]="{'background-color':product.colors[i+1]}"></span></label>
                                 </div>
 
                             </div>
