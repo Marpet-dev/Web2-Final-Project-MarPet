@@ -5,11 +5,22 @@
 
                 <div class="products_gallery-left">
                     <div class="products_gallery-slider">
-                        <div style="text-align:center" class="dot_container">
-                            <span *ngFor="let i of product.image" class="dot" onclick="showImg()">
+                        <!-- <div style="text-align:center" class="dot_container"> -->
+                            <!-- <span *ngFor="let i of product.image" class="dot" onclick="showImg()">
                                 <img src="../../../assets/{{i}}" alt="">
-                            </span>
-                        </div>
+                            </span> -->
+                            <ngx-slick-carousel class="ul-box carousel" 
+                #slickModal="slick-carousel" 
+                [config]="slideConfig2" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <span ngxSlickItem *ngFor="let i of product.image.slice().reverse()" class="dot" onclick="showImg()">
+                            <img src="../../../assets/{{i}}" alt="">
+                    </span>
+                </ngx-slick-carousel>
+                        <!-- </div> -->
                         <div class="products_detail-img" id="products_detail-img">
                             <img src="../../../assets/{{product.image[0]}}" alt="">
                         </div>
