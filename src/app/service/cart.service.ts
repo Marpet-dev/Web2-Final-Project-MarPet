@@ -7,7 +7,8 @@ import { Item } from '@syncfusion/ej2-angular-navigations';
   providedIn: 'root'
 })
 export class CartService {
-
+  favDataList : any = [];
+  productFav = new BehaviorSubject<any>([]);
   cartDataList : any =[];
   productList = new BehaviorSubject<any>([]);
 
@@ -18,6 +19,13 @@ export class CartService {
   setProduct(product : any){
     this.cartDataList.push(...product);
     this.productList.next(product);
+  }
+  getProductFav(){
+    return this.productFav.asObservable();
+  }
+  addToFav(product: any){
+    this.favDataList.push(product);
+    this.productFav.next(this.favDataList);
   }
   addToCart(product : any){
     this.getQuantity(product);
@@ -34,7 +42,7 @@ export class CartService {
     })
   }
   getQuantity(product:any){
-    let productQuantity = 0;
+    let productQuantity = 1;
     productQuantity= product.quantity;
 
   }
@@ -44,6 +52,7 @@ export class CartService {
         this.cartDataList.splice(index,1);
       }
     })
+    this.productList.next(this.cartDataList);
   }
   removeAllCart(){
     this.cartDataList = []

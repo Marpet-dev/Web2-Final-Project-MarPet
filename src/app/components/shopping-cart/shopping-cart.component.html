@@ -1,16 +1,22 @@
 <section class="h-100 gradient-custom"
   style="margin-top:-20px;margin-bottom:-50px">
   
-  <ng-container *ngIf="products.length ==0">
-    <div class="card">
-      <h4 class="card-title">JZTR</h4>
-      <div class="center">
-        <img src="https://cdn-icons-png.flaticon.com/512/2945/2945609.png" alt="">
-        <h5>Mua hang coi</h5>
-        <h6>Mua di ne</h6>
-        <button class="btn btn-dark" routerLink="home">CHOT DON</button>
+  <ng-container *ngIf="products.length ==0" >
+    <div class="row d-flex justify-content-center">
+    <div class="card col-md-6" style="width: 50%; margin-top: 50px; margin-bottom: 50px">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="https://cdn-icons-png.flaticon.com/512/2945/2945609.png" class="img-fluid " style="width: 100px; margin-left: auto; margin-right: auto; display:block; margin-top: 10px"/>
+        <a routerLink="">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body text-center">
+        <h5 class="card-title">GIỎ HÀNG TRỐNG</h5>
+        <p class="card-text">Hãy chọn cho mình những sản phẩm yêu thích nhé!</p>
+        <a href="/home" class="btn btn-dark">Mua hàng</a>
       </div>
     </div>
+  </div>
   </ng-container>
   <ng-container *ngIf="products.length !=0">
   <div class="container py-5">
@@ -49,11 +55,11 @@
                     title="Remove item">
                     <i class="fas fa-trash"></i>
                   </button>
-                  <button type="button" class="btn btn-danger btn-sm mb-2"
+                  <!-- <button type="button" class="btn btn-danger btn-sm mb-2"
                     data-mdb-toggle="tooltip"
                     title="Move to the wish list">
                     <i class="fas fa-heart"></i>
-                  </button>
+                  </button> -->
                   <!-- Data -->
                 </div>
   
@@ -63,10 +69,10 @@
                   <!-- <p>Số lượng</p> -->
   
                   <div class="d-flex mb-4" style="max-width: 300px">
-                    <button class="btn btn-dark px-3 me-2"
+                    <!-- <button class="btn btn-dark px-3 me-2"
                       onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                       <i class="fas fa-minus"></i>
-                    </button>
+                    </button> -->
   
                     <!-- <div class="form-outline">
                         <input style="text-align: center !important;" id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
@@ -75,19 +81,19 @@
                     <label class="input">
                       <input style="text-align: center !important;"
                         class="input__field" id="form1" min="0" name="quantity"
-                        value="1" type="number" />
+                        value="1" type="number" readonly />
                       <span class="input__label">Số lượng</span>
                     </label>
-                    <button class="btn btn-dark px-3 ms-2"
+                    <!-- <button class="btn btn-dark px-3 ms-2"
                       onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                       <i class="fas fa-plus"></i>
-                    </button>
+                    </button> -->
                   </div>
                   <!-- Quantity -->
   
                   <!-- Price -->
                   <p class="text-start text-md-center">
-                    <strong>500.000 VNĐ</strong>
+                    <strong>{{item.price[0]}}</strong>
                   </p>
                   <!-- Price -->
                 </div>
@@ -98,7 +104,10 @@
   
             </div>
         
-          
+            <a class="btn btn-dark" style="background-color: #55acee; margin-bottom: 20px; width: 60%" (click)="removeAllProduct()" role="button">
+              <i class="fa fa-trash me-2"></i>
+              Xóa giỏ hàng
+            </a>
         </div>
         <div class="card mb-4">
           <div class="card-body">
