@@ -69,7 +69,7 @@ export class CatComponent implements OnInit {
     if (type === 'c_co'){
       this.category="Vòng cổ, dây dắt, rọ mõm"
     }
-    if (type === 'c_co'){
+    if (type === 'c_ds'){
       this.category="Dụng cụ ăn uống"
     }
     if (type === 'c_be'){
@@ -77,6 +77,9 @@ export class CatComponent implements OnInit {
     }
     if (type === 'c_ca'){
       this.category="Chuồng, giường, nhà, túi"
+    }
+    if (type === 'c_toy'){
+      this.category="Đồ chơi, phụ kiện huấn luyện"
     }
     if (type === 'c_sa'){
       this.category="Cát vệ sinh"

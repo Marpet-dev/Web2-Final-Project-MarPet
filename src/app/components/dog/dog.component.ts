@@ -73,7 +73,7 @@ export class DogComponent implements OnInit {
     if (type === 'd_co'){
       this.category="Vòng cổ, dây dắt, rọ mõm"
     }
-    if (type === 'd_co'){
+    if (type === 'd_ds'){
       this.category="Dụng cụ ăn uống"
     }
     if (type === 'd_be'){
@@ -81,6 +81,9 @@ export class DogComponent implements OnInit {
     }
     if (type === 'd_ca'){
       this.category="Chuồng, giường, nhà, túi"
+    }
+    if (type === 'd_toy'){
+      this.category="Đồ chơi, phụ kiện huấn luyện"
     }
 
     this.loadProducts()
