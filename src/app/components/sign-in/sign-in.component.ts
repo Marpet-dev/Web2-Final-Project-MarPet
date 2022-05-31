@@ -32,7 +32,8 @@ export class SignInComponent implements OnInit {
       let id = params.get('id');
       //get product info ==> call api 
       // console.log(id);
-this.getUserData(id);})
+// this.getUserData(id);
+})
 
     this.regForm = this._formBuilder.group({
       email: ['', Validators.email],
@@ -79,11 +80,11 @@ this._service.postUser(this.user).subscribe(res=>{
 
 
 }
-getUserData(id: any){
-  this._service.getUserInfo(id).subscribe({
-    next: data=>this.userLogin=data,
-    error: error=>console.log(error)
-  })
-}
+// getUserData(id: any){
+//   this._service.getUserInfo(id).subscribe({
+//     next: data=>this.userLogin=data,
+//     error: error=>console.log(error)
+//   })
+// }
  
 }
