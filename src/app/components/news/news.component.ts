@@ -105,7 +105,7 @@ export class NewsComponent implements OnInit {
   subnewsList: any[] = [];
   homeNewsList: any[]=[];
   selectedId: any;
-  selectId: any;
+
  
 
   constructor(private _subnew: NewsService, private _homeNews: NewsService, private _router: Router, private activatedRoute: ActivatedRoute) { }
