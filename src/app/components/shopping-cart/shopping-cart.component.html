@@ -21,10 +21,10 @@
   <ng-container *ngIf="products.length !=0">
   <div class="container py-5">
     <div class="row d-flex justify-content-center my-4">
-      <div class="col-md-8">
+    <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Giỏ hàng - 2 sản phẩm</h5>
+            <h5 class="mb-0">Giỏ hàng - {{products.length}} sản phẩm</h5>
           </div>
           
             <div class="card-body" *ngFor="let item of products, let i = index">
@@ -104,7 +104,7 @@
   
             </div>
         
-            <a class="btn btn-dark" style="background-color: #55acee; margin-bottom: 20px; width: 60%" (click)="removeAllProduct()" role="button">
+            <a class="btn btn-dark" style=" margin-bottom: 20px; width: 50%; margin-left: auto; margin-right: auto" (click)="removeAllProduct()" role="button">
               <i class="fa fa-trash me-2"></i>
               Xóa giỏ hàng
             </a>
@@ -228,23 +228,23 @@
 
               <div class="d-flex justify-content-between">
                 <p class="mb-2">Tổng tiền hàng</p>
-                <p class="mb-2">$4798.00</p>
+                <p class="mb-2">350000</p>
               </div>
 
               <div class="d-flex justify-content-between">
                 <p class="mb-2">Phí giao hàng</p>
-                <p class="mb-2">$20.00</p>
+                <p class="mb-2">20000</p>
               </div>
 
               <div class="d-flex justify-content-between mb-4">
                 <p class="mb-2">Tổng cộng</p>
-                <p class="mb-2">$4818.00</p>
+                <p class="mb-2">370000</p>
               </div>
 
               <button type="button" class="btn btn-light btn-block btn-lg"
                 data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                 <div class="d-flex justify-content-between">
-                  <span>$4818.00</span>
+                  <span>370000</span>
                   <span>Xác nhận <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                 </div>
               </button>
@@ -265,16 +265,16 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
         <button type="button" class="btn-close" data-mdb-dismiss="modal"
           aria-label="Close"></button>
       </div>
-      <div class="modal-body">...</div>
+      <div class="modal-body">Bạn muốn đặt đơn hàng này?</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
-          data-mdb-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
-          data-mdb-target="#confirmModal">Save changes</button>
+          data-mdb-dismiss="modal">Hủy</button>
+        <button type="button"  class="btn btn-primary" data-mdb-toggle="modal"
+          data-mdb-target="#confirmModal">Đồng ý</button>
       </div>
     </div>
   </div>
@@ -285,14 +285,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Đặt hàng thành công</h5>
         <button type="button" class="btn-close" data-mdb-dismiss="modal"
           aria-label="Close"></button>
       </div>
-      <div class="modal-body">...</div>
+      <div class="modal-body">Cảm ơn bạn đã ủng hộ</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
-          data-mdb-dismiss="modal">Close</button>
+          data-mdb-dismiss="modal">Đóng</button>
       </div>
     </div>
   </div>

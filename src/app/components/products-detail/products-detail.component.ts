@@ -85,7 +85,7 @@ export class ProductsDetailComponent implements OnInit {
     .subscribe(res=>{
       this.productList = res;
       this.productList.forEach((a:any) => {
-        Object.assign(a,{quantity:this.quantity,total:a.price});
+        Object.assign(a,{quantity:this.quantity,total:a.price[0]});
         a.quantity=this.quantity;
       });
       
