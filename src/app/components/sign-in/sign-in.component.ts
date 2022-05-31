@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
+import { LoginService } from 'src/app/service/login.service';
 import { customValidator, passwordValidator } from 'src/app/validators/check.validators';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -10,8 +14,12 @@ import { customValidator, passwordValidator } from 'src/app/validators/check.val
 export class SignInComponent implements OnInit {
 
   public regForm:any;
+  user: User = new User();
+  // loading: boolean = false;
+  // sumitted:boolean = false;
+  // returnUrl: string ;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private _service: LoginService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.regForm = this._formBuilder.group({
@@ -24,4 +32,28 @@ export class SignInComponent implements OnInit {
   // get pass(){
   //   return this.regForm.controls['pass']
   // }
+  // login(){
+  //   this.sumitted=true;
+  //   console.log('hello')
+
+  //   if(this.regForm.invalid){
+  //     return;
+  //   }
+  //   this.loading=true;
+
+//   this._service.postUser(this.user).subscribe({next: res=>{
+//       console.log('hello');
+//       this.toastr.success('Successfully !');
+//   },
+//   error:err=>{
+//     console.log(err.message);
+//     this.toastr.error('failure')
+//   }
+// }
+//   )
+
+
+
 }
+
+
