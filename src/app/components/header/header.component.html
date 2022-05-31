@@ -16,7 +16,7 @@
       >
         <i class="fas fa-bars"></i>
       </button>
-  
+      
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar brand -->
@@ -29,6 +29,7 @@
             style="margin-left: auto; margin-right: auto; display: block;"
           />
         </a>
+        <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" routerLink="home">Trang chủ</a>
@@ -54,54 +55,20 @@
             <span class="badge rounded-pill badge-notification bg-danger" style="position:relative;right:-10px;bottom:30px; ">0</span>
           </li> -->
         </ul>
-        <!-- <form class="d-flex searchBarCSS">
+        <form class="d-flex searchBarCSS">
           
           <input class="form-control me-2" 
           type="search" 
-          
+          [(ngModel)]="searchTerm"  
           placeholder="Nhập để tìm kiếm" aria-label="Search">
           <button class="btn btn-outline-warning" type="submit">Tìm</button>
-          
+          <!-- <button style="width: 1px;" class="btn btn-outline-warning" type="submit">Tìm</button> -->
         </form>
-        <div class="search-bar-body">
-          <table class="table">
-              <tbody>
-                <tr *ngFor="let p of products | filter: searchText" routerLink="/products/{{p._id}}" routerLinkActive="active">
-                  <td><img style="border-radius: 3px;" src="../../../assets/{{p.image[0]}}" width="150px" alt=""></td>
-                  <td>{{ p.name }}</td>
-                </tr>
-              </tbody>
-            </table>
-      </div> -->
-      <div class="search text-center">
-        <button class="btn-search {{search_focus}}" (click)="changeSearch()">
-          <i class="fas fa-search" style="margin-right:10px"></i>
-        </button>
-        <div class="search-box {{box_show}}" (mouseleave)="changeSearch()">
-            
-            <div class="search-bar">
-              <div>
-                    <input style="background-image: url('../../assets/images/ICON/search.png'); background-size: 20px;" type="text" id="myInput" [(ngModel)]="searchText" onkeyup="myFunction()" placeholder="Nhập để tìm kiếm">
-               
-                <div class="search-bar-body">
-                    <table class="table">
-                        <tbody>
-                          <tr *ngFor="let p of products | filter: searchText" routerLink="/products/{{p._id}}" routerLinkActive="active">
-                            <td><img style="border-radius: 3px;" src="../../../assets/{{p.image[0]}}" width="150px" alt=""></td>
-                            <td>{{ p.name }}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
         <br>
         <!-- Left links -->
       </div>
       <!-- Collapsible wrapper -->
-  
+      
       <!-- Right elements -->
       <div class="d-flex align-items-center text-center" style="margin: 0 auto">
         <!-- <div class="input-group" style="margin-right:60px;">
@@ -115,15 +82,17 @@
         </div> -->
         
         <!-- Icon -->
+        
         <a class="text-reset me-3 headerItemResponsive2" routerLink="shopping-cart" href="/shopping-cart">
           <i class="fas fa-shopping-cart"></i>
           <span class="badge rounded-pill badge-notification bg-danger">{{totalItem}}</span>
         </a>
-        <!-- <a class="text-reset me-3 headerItemResponsive2" href="/favorite">
+        <a class="text-reset me-3 headerItemResponsive2" href="/favorite">
           <i class="fas fa-heart"></i>
           <span class="badge rounded-pill badge-notification bg-danger">0</span>
-        </a> -->
-  
+        </a>
+        
+        
         <!-- Notifications -->
         <div class="dropdown">
           <!-- <a
@@ -137,6 +106,7 @@
             <i class="fas fa-heart"></i>
             <span class="badge rounded-pill badge-notification bg-danger">0</span>
           </a> -->
+          
           <ul
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdownMenuLink"
@@ -175,6 +145,7 @@
               loading="lazy"
             />
           </a>
+          
           <ul
             class="dropdown-menu dropdown-menu-end text-center"
             aria-labelledby="navbarDropdownMenuAvatar"
@@ -185,6 +156,7 @@
             <li>
               <a class="dropdown-item" routerLink="/sign-up">Đăng ký</a>
             </li>
+            
             <!-- <li>
               <a class="dropdown-item dangxuat" href="/home">Đăng xuất</a>
             </li> -->
