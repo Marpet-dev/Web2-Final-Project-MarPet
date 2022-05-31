@@ -11,7 +11,6 @@ import hnews from '../../../assets/data/homeNews.json'
 })
 export class NewDetailComponent implements OnInit {
 selectedId: any;
-selectedTitle: any;
 newDetail: any;
 hnewDetail: any;
 // hnewDetail: any;
