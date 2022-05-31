@@ -5,7 +5,7 @@
                 <h2 class="font-weight-bold">Đăng nhập</h2>
                 <div class="loginContent">
                     <div class="flex-container-left w-50">
-                        <form [formGroup]="regForm" >
+                        <form [formGroup]="regForm"  (ngSubmit)="login(regForm)" >
                             <div class="mb-3">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" class="form-control" formControlName="email"
@@ -46,6 +46,8 @@
                             <p><span>Được hưởng ưu đãi, chương trình giảm giá chỉ áp dụng cho thành viên.</span></p>
                             <p><span>Tích lũy <span class="text-pink">MP-xu</span> đổi quà tặng và hơn thế nữa.</span>
                             </p>
+                                <!-- <h1 >Hi {{userLogin.fullName}}!</h1> -->
+                          
                         </div>
                     </div>
                 </div>

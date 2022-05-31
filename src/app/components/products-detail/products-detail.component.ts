@@ -17,6 +17,7 @@ export class ProductsDetailComponent implements OnInit {
   productList : any;
   constructor(private _service: ProductsService, private _activatedRoute: ActivatedRoute, private cartService : CartService,private api : ApiService) { }
   quantity: number = 1;
+  
   slides = [
     { img: 'https://via.placeholder.com/600.png/09f/fff' },
     { img: 'https://via.placeholder.com/600.png/021/fff' },
@@ -84,9 +85,10 @@ export class ProductsDetailComponent implements OnInit {
     .subscribe(res=>{
       this.productList = res;
       this.productList.forEach((a:any) => {
-        Object.assign(a,{quantity:1,total:a.price});
+        Object.assign(a,{quantity:this.quantity,total:a.price});
+        a.quantity=this.quantity;
       });
-      // console.log(this.productList)
+      
     });
     this._activatedRoute.paramMap.subscribe(
       (param) => {
@@ -119,15 +121,20 @@ export class ProductsDetailComponent implements OnInit {
     this.bigImage= i;
   }
 
-  plus()
+  plus(item: any)
   {
    this.quantity = this.quantity+1;
+    item.quantity = item.quantity +1;
+    console.log('item',item.quantity);
+    console.log('this',this.quantity);
   }
-  minus()
+  minus(item:any)
   {
     if(this.quantity > 1)
   {
    this.quantity = this.quantity-1;
+   item.quantity=item.quantity-1;
   }
 }
+
 }

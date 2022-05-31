@@ -66,10 +66,10 @@ export class SignUpComponent implements OnInit {
   get fullName() {
     return this.regForm.controls['fullName']
   }
+  
   submitUserData(form:NgForm){
-   
-    Object.assign(this.user, form.value)
-    console.log('Model: ',this.user)
+  Object.assign(this.user, form.value)
+  console.log('Model: ',this.user)
   if (this.user._id=='') {
   this._service.postUser(this.user).subscribe(res=>{
   })

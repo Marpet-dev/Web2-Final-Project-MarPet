@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import news from '../../../assets/data/subnews.json'
 import hnews from '../../../assets/data/homeNews.json'
 
+
 @Component({
   selector: 'app-new-detail',
   templateUrl: './new-detail.component.html',
@@ -12,6 +13,7 @@ export class NewDetailComponent implements OnInit {
 selectedId: any;
 selectedTitle: any;
 newDetail: any;
+hnewDetail: any;
 // hnewDetail: any;
 // selectId: any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
@@ -22,9 +24,18 @@ newDetail: any;
         let id = param.get ('id')
         console.log(id)
         if (id != null){
-          this.selectedId = parseInt(id);
-          let item = news.filter(item => item.id === this.selectedId)[0]
-          this.newDetail = item
+          let idne = parseInt(id)
+          if(idne<5){
+            this.selectedId = idne;
+            let item = news.filter(item => item.id === this.selectedId)[0]
+            this.newDetail = item
+          }
+        else{
+          this.selectedId = idne;
+          let hitem = hnews.filter(hitem => hitem.id === this.selectedId)[0]
+          this.newDetail = hitem
+         
+        }
         }
       }
     )
