@@ -11,4 +11,5 @@ export interface Product {
     "description": string;
     "benefit": string;
     "instruction": string;
+    "quantity": number
 }

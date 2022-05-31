@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Item } from '@syncfusion/ej2-angular-navigations';
 
 @Injectable({
   providedIn: 'root'
@@ -19,16 +20,23 @@ export class CartService {
     this.productList.next(product);
   }
   addToCart(product : any){
+    this.getQuantity(product);
     this.cartDataList.push(product);
     this.productList.next(this.cartDataList);
     this.getTotalAmount();
     console.log(this.cartDataList);
+    console.log(product.quantity);
   }
   getTotalAmount() {
     let grandTotal = 0;
     this.cartDataList.map((a:any)=>{
       grandTotal += a.total;
     })
+  }
+  getQuantity(product:any){
+    let productQuantity = 0;
+    productQuantity= product.quantity;
+
   }
   removeCartData(product: any){
     this.cartDataList.map((a:any, index:any)=>{
