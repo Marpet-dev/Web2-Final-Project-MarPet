@@ -27,15 +27,11 @@
             </ul>
         </div>
     </div>
-    <!-- [style.display]="checkDog(p.category)"  -->
-    <!-- *ngIf="(p.category.substring(0, 1) == 'd')" -->
-    <!-- [style.visibility]="checkDog2(p.category)" -->
-        <!-- <div style="display: none !important;" class="products d-flex justify-content-center col-xl-4 col-md-6">s</div> -->
     <div class="row">
         <div class="headline">
             {{category}}
         </div>
-        <div routerLink="/products/{{p._id}}" class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of checkDog(products) | filter:searchKey:'title'">
+        <div routerLink="/products/{{p._id}}" class="products d-flex justify-content-center col-xl-4 col-md-6" *ngFor="let p of checkDog(products)">
             <div class="product w-100">
                 <div class="product-item">
                     <div class="product-top text-center">

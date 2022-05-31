@@ -48,8 +48,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductsDetailComponent } from './components/products-detail/products-detail.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-import { FilterPipe } from './shared/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { FilterPipe } from './shared/filter.pipe';
     SignInComponent,
     SignUpComponent,
     PolicyComponent,
-    FilterPipe,
+
 RoutingComponents,
 AboutComponent,
 ServiceAndSupportComponent,
@@ -74,7 +75,7 @@ ShoppingCartComponent,
 PagenotfoundComponent,
 FavoriteComponent,
 ProductsDetailComponent,
-FilterPipe,
+
 
 
     
@@ -106,7 +107,7 @@ FilterPipe,
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-
+    Ng2SearchPipeModule,
     BrowserAnimationsModule,   
     ToastrModule.forRoot({
       timeOut: 3000,
